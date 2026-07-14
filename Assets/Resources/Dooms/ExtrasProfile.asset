@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4aaae0e689215a4bac6bac799c5b843, type: 3}
+  m_Name: ExtrasProfile
+  m_EditorClassIdentifier: 
+  tickInterval: 1
+  goalDurationSec: 12
+  factionHomeBonus: 0.5
+  distancePenaltyPerMeter: 0.01
+  crowdPenalty: 1
+  directiveBias: 1.5
+  baseWanderInterest: 0.05
+  interestJitter: 0.1
+  softAreaCapacity: 4
+  maxAssignDistance: 60
+  encounterScanRadius: 4
+  encounterChancePerTick: 0.5
+  maxEncountersPerTick: 4
+  maxFightsPerTick: 1
+  requireMoodForFights: 1
+  hostilityDirectiveThreshold: 0.4
+  infectiousJoinChance: 0.25
+  maxInfectiousParticipants: 3
+  lethalEncountersEnabled: 1
+  personalHostilityTrigger: 0.6
+  hostilityPersonaWeight: 0.6
+  hostilityRelationWeight: 0.5
+  hostilityAggressionWeight: 0.3
+  fightHostilityThreshold: 0.4
+  witnessRadius: 12
+  witnessDriftBase: 0.05
+  lethalDriftMultiplier: 2.5
+  violenceMoodTag: violent
+  violenceInfluenceRadius: 10

@@ -1,0 +1,374 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7186a9c0094ab07409401e1a38768b02, type: 3}
+  m_Name: InteractableCatalog
+  m_EditorClassIdentifier: 
+  archetypes:
+  - archetypeId: Generator
+    defaultName: Generator
+    defaultDescription: Energy generator is used to power electric objects around
+      it. Interact with generator to yie
+    defaultState: 0
+    defaultContextTags:
+    - Electricity
+    - Power
+    - Energy
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: Interacting with generator allows to turn it if it is usable or
+        fix it if it is broken
+      requiredItems: []
+      requiredStates: 00000000
+      resultingState: 2
+      consumeItems: 0
+      yieldItems: []
+      estimatedDuration: 500
+    - actionName: Fix
+      description: Interacting with generator allows to turn it on if it is usable
+        or fix it if it is broken
+      requiredItems:
+      - itemId: Toolbox
+        quantity: 1
+        consumed: 1
+      requiredStates: 01000000
+      resultingState: 0
+      consumeItems: 1
+      yieldItems: []
+      estimatedDuration: 500
+  - archetypeId: CarBattery
+    defaultName: CarBattery
+    defaultDescription: CarBattery can power and kickstart nearby electrical items.
+    defaultState: 0
+    defaultContextTags:
+    - Electricity
+    - Power
+    - Energy
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: Interacting with generator allows to turn it if it is usable or
+        fix it if it is broken. Requires Toolbox in inventory.
+      requiredItems:
+      - itemId: Toolbox
+        quantity: 1
+        consumed: 1
+      requiredStates: 
+      resultingState: 0
+      consumeItems: 1
+      yieldItems: []
+      estimatedDuration: 30
+  - archetypeId: SupplyCrate
+    defaultName: SupplyCrate
+    defaultDescription: A metal crate that might contain useful items
+    defaultState: 0
+    defaultContextTags:
+    - Supply
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: Can contain usefull goodies.
+      requiredItems: []
+      requiredStates: 
+      resultingState: 0
+      consumeItems: 0
+      yieldItems:
+      - itemId: WaterBottle
+        minQuantity: 1
+        maxQuantity: 3
+        dropChance: 0.3
+        dropInWorld: 0
+      - itemId: WalkieTalkie
+        minQuantity: 1
+        maxQuantity: 2
+        dropChance: 0.6
+        dropInWorld: 1
+      estimatedDuration: 20
+  - archetypeId: Bed
+    defaultName: Bed
+    defaultDescription: Nice and warm bed to rest on.
+    defaultState: 0
+    defaultContextTags:
+    - Sleep
+    - Night
+    - Rest
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: You can rest here. Sleep through windy night.
+      requiredItems: []
+      requiredStates: 00000000
+      resultingState: 0
+      consumeItems: 0
+      yieldItems: []
+      estimatedDuration: 300
+  - archetypeId: Server
+    defaultName: Server
+    defaultDescription: The running server in DOOM room. Poison your mind with apocaliptic
+      visions. Must to be maintained.
+    defaultState: 1
+    defaultContextTags:
+    - Server
+    - Machine
+    - Fear
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: 'You can interact with server. You must maintain it. '
+      requiredItems:
+      - itemId: Toolbox
+        quantity: 1
+        consumed: 0
+      requiredStates: 00000000
+      resultingState: 0
+      consumeItems: 0
+      yieldItems: []
+      estimatedDuration: 300
+  - archetypeId: WaterBarrel
+    defaultName: WaterBarrel
+    defaultDescription: Water barrel, allow you to refill your water inventory
+    defaultState: 0
+    defaultContextTags:
+    - Water
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: 'You can interact with server. You must maintain it. '
+      requiredItems: []
+      requiredStates: 00000000
+      resultingState: 0
+      consumeItems: 0
+      yieldItems:
+      - itemId: WaterBottle
+        minQuantity: 1
+        maxQuantity: 1
+        dropChance: 1
+        dropInWorld: 0
+      estimatedDuration: 20
+  - archetypeId: Laptop
+    defaultName: Laptop
+    defaultDescription: Laptop allows you to controll servers in DOOM ROOM. Use it
+      in good or malicious intents.
+    defaultState: 3
+    defaultContextTags:
+    - Laptop
+    - Electronics
+    - Electronics
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: 'You can interact with server. You must maintain it. '
+      requiredItems: []
+      requiredStates: 00000000
+      resultingState: 0
+      consumeItems: 0
+      yieldItems:
+      - itemId: WaterBottle
+        minQuantity: 1
+        maxQuantity: 1
+        dropChance: 1
+        dropInWorld: 0
+      estimatedDuration: 20
+  - archetypeId: Transformer
+    defaultName: Transformer
+    defaultDescription: Stabelizes power supply to server DOOM ROOM servers.
+    defaultState: 1
+    defaultContextTags:
+    - Power
+    - Tranformer
+    - Electronics
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: 'You can interact with server. You must maintain it. '
+      requiredItems: []
+      requiredStates: 00000000
+      resultingState: 0
+      consumeItems: 0
+      yieldItems:
+      - itemId: WaterBottle
+        minQuantity: 1
+        maxQuantity: 1
+        dropChance: 1
+        dropInWorld: 0
+      estimatedDuration: 20
+  - archetypeId: Vending Machine
+    defaultName: Vending Machine
+    defaultDescription: Vending machine might have some pre-historic goodies.
+    defaultState: 1
+    defaultContextTags:
+    - Goods
+    - Electronics
+    - Loot
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: 'You can interact with server. You must maintain it. '
+      requiredItems: []
+      requiredStates: 00000000
+      resultingState: 0
+      consumeItems: 0
+      yieldItems:
+      - itemId: WaterBottle
+        minQuantity: 1
+        maxQuantity: 1
+        dropChance: 1
+        dropInWorld: 0
+      estimatedDuration: 20
+  - archetypeId: Electronics crate
+    defaultName: Electronics crate
+    defaultDescription: Might have some usefull electronics.
+    defaultState: 0
+    defaultContextTags:
+    - Goods
+    - Electronics
+    - Loot
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: 'You can interact with server. You must maintain it. '
+      requiredItems: []
+      requiredStates: 00000000
+      resultingState: 0
+      consumeItems: 0
+      yieldItems:
+      - itemId: WaterBottle
+        minQuantity: 1
+        maxQuantity: 1
+        dropChance: 1
+        dropInWorld: 0
+      estimatedDuration: 20
+  - archetypeId: ControlAgent
+    defaultName: ControlAgent
+    defaultDescription: Neuromancing agent, controlling brain inplants
+    defaultState: 0
+    defaultContextTags:
+    - Goods
+    - Electronics
+    - Loot
+    interactionHint: 
+    affordances:
+    - actionName: InteractWith
+      description: 'You can interact with server. You must maintain it. '
+      requiredItems: []
+      requiredStates: 00000000
+      resultingState: 0
+      consumeItems: 0
+      yieldItems:
+      - itemId: WaterBottle
+        minQuantity: 1
+        maxQuantity: 1
+        dropChance: 1
+        dropInWorld: 0
+      estimatedDuration: 20
+  items:
+  - itemId: WaterBottle
+    displayName: WaterBottle
+    description: A full bottle of water, helps to stay hydrated
+    interactionHint: 
+    defaultContextTags:
+    - item
+    weight: 0.1
+    category: water
+    dropPrefab: {fileID: 7928401234053793259, guid: 010f0b1aa0fdae34d999021b838fbdd5, type: 3}
+  - itemId: ToolBox
+    displayName: ToolBox
+    description: Good to have toolbox in inventory, it helps with maintainance.
+    interactionHint: 
+    defaultContextTags:
+    - item
+    weight: 0.4
+    category: tools
+    dropPrefab: {fileID: 7928401234053793259, guid: 010f0b1aa0fdae34d999021b838fbdd5, type: 3}
+  - itemId: Cereals
+    displayName: Cereals
+    description: Food for your brains, fatty.
+    interactionHint: Interact with it to pick up or eat it.
+    defaultContextTags:
+    - food
+    weight: 0.1
+    category: food
+    dropPrefab: {fileID: 8011111181624150768, guid: 3a8f663f2d7d63d4daa59862c6c06ea1, type: 3}
+  - itemId: Laptop
+    displayName: Laptop
+    description: Laptop allows you to controll servers in DOOM ROOM. Use it in good
+      or malicious intents.
+    interactionHint: Pick it up or use it.
+    defaultContextTags:
+    - Laptop
+    weight: 0.5
+    category: electronics
+    dropPrefab: {fileID: 8011111181624150768, guid: 3a8f663f2d7d63d4daa59862c6c06ea1, type: 3}
+  - itemId: WalkieTalkie
+    displayName: WalkieTalkie
+    description: Walkie talkie, what an old way to communicate, we all use neurolink
+      already
+    interactionHint: Pick it up or use it.
+    defaultContextTags:
+    - electronics
+    weight: 0.1
+    category: electronics
+    dropPrefab: {fileID: 3017861025829132378, guid: de47764bbb146c14db6bc5f9d8289196, type: 3}
+  - itemId: Adderall
+    displayName: Adderall
+    description: Oh boy, it gives you energy!
+    interactionHint: Pop the pill
+    defaultContextTags:
+    - food
+    weight: 0.1
+    category: food
+    dropPrefab: {fileID: 5463815850228470552, guid: 938678a131441ba43b01102432055c10, type: 3}
+  - itemId: Drill
+    displayName: Drill
+    description: Drill for maintainance
+    interactionHint: Pick up
+    defaultContextTags: []
+    weight: 0.1
+    category: Fix
+    dropPrefab: {fileID: 6074139910492511235, guid: 789ae928084930341bd48fa980ecab17, type: 3}
+  - itemId: Axe
+    displayName: Axe
+    description: Axe for chopping (heads)
+    interactionHint: Pick up
+    defaultContextTags: []
+    weight: 0.1
+    category: Fix
+    dropPrefab: {fileID: 8136735938742237660, guid: 3d7867eb307fa4a48b086d63f016002b, type: 3}
+  - itemId: MachineGun
+    displayName: MachineGun
+    description: 'MachineGun for shooting '
+    interactionHint: Pick up
+    defaultContextTags: []
+    weight: 0.1
+    category: Fix
+    dropPrefab: {fileID: 2989696536348569323, guid: b0b378de70e4bb4489f053fc8606db93, type: 3}
+  contextTags: []
+  actionVocabulary:
+  - InteractWith
+  - Pickup
+  - Fix
+  - Destroy
+  - SleepAt
+  - HideAt
+  - TalkTo
+  - Use
+  customObjectStates: []
+  registeredObjectIds:
+  - Car Battery
+  - Generator
+  - Laptop
+  - Light
+  - Server
+  - Supply Crate
+  - ToolBox
+  - Transformer
+  - WaterBottle

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3726092834273575908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727964f8303832346b7a9faeab77f6bc, type: 3}
+  m_Name: AfterCrackdownSilence_Graph
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"MLA_SIM.Dooms.Scenes.SceneGraph","nodes":[{"phaseId":"Silence","minDurationSec":90.0,"maxDurationSec":120.0,"roles":[{"roleId":"HeavyPatrol","factionId":"Guard","pointTag":"PatrolRoute","animationState":"Patrolling","count":4,"arrivalTolerance":3.0},{"roleId":"HiddenCivilians","factionId":"Civilian","pointTag":"Bed","animationState":"Sleeping","count":2,"optional":true},{"roleId":"RestoringTech","factionId":"Server","pointTag":"ServerConsole","animationState":"Working","optional":true},{"roleId":"LastLuddite","factionId":"Luddite","pointTag":"HidingSpot","animationState":"Hiding","optional":true},{"roleId":"ExhaustedBuilders","factionId":"Builder","pointTag":"Bed","animationState":"Sleeping","count":2,"optional":true}],"$type":"MLA_SIM.Dooms.Scenes.Nodes.HoldPhaseNode"}],"connections":[],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.41
+    _category: 
+    _comments: 
+    _translation: {x: 384.7062, y: 254.2996}
+    _zoomFactor: 0.99221456
+  _haltSerialization: 0
+  _externalSerializationFile: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598f84c4afa3d08488ef07b00dec7673, type: 3}
+  m_Name: AfterCrackdownSilence
+  m_EditorClassIdentifier: 
+  sceneId: AfterCrackdownSilence
+  displayName: After Crackdown Silence
+  description: Hours after the crackdown. The facility is damaged, quiet, under heavy
+    surveillance. Wounded workers are tended. Guards patrol with heightened aggression.
+    A server manager works alone to restore damaged systems.
+  requiredFactions:
+  - Guard
+  minAgentsPerFaction: 2
+  baseDurationSec: 120
+  graph: {fileID: -3726092834273575908}
+  tags:
+  - somber
+  - quiet
+  - aftermath

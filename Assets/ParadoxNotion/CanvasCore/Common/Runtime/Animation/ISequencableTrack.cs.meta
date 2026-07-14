@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: bec9779673814224aafbdbd1fa4c7935
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 14914
+  packageName: NodeCanvas
+  packageVersion: 3.4.1
+  assetPath: Assets/ParadoxNotion/CanvasCore/Common/Runtime/Animation/ISequencableTrack.cs
+  uploadId: 866614

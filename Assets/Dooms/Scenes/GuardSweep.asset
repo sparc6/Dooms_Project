@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598f84c4afa3d08488ef07b00dec7673, type: 3}
+  m_Name: GuardSweep
+  m_EditorClassIdentifier: 
+  sceneId: GuardSweep
+  displayName: Guard Sweep
+  description: A security sweep is ordered. Guards move through the main floor checking
+    identities, searching bags, looking for Luddite propaganda. Civilians scatter.
+    Luddites melt into shadows.
+  requiredFactions:
+  - Guard
+  minAgentsPerFaction: 3
+  baseDurationSec: 100
+  graph: {fileID: 5755692889578180472}
+  tags:
+  - tense
+  - authority
+  - surveillance
+--- !u!114 &5755692889578180472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727964f8303832346b7a9faeab77f6bc, type: 3}
+  m_Name: GuardSweep_Graph
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"MLA_SIM.Dooms.Scenes.SceneGraph","nodes":[{"phaseId":"Assemble","minDurationSec":10.0,"maxDurationSec":15.0,"roles":[{"roleId":"SweepGuards","factionId":"Guard","pointTag":"PatrolRoute","animationState":"Walking","count":4,"arrivalTolerance":3.0},{"roleId":"Civilians","factionId":"Civilian","pointTag":"Observer","animationState":"Walking","count":3,"arrivalTolerance":3.0,"optional":true},{"roleId":"LudditeHiding","factionId":"Luddite","pointTag":"HidingSpot","animationState":"Walking","count":2,"optional":true}],"$type":"MLA_SIM.Dooms.Scenes.Nodes.AssemblePhaseNode","$id":"0"},{"phaseId":"Sweep","minDurationSec":60.0,"maxDurationSec":90.0,"roles":[{"roleId":"SweepGuards","factionId":"Guard","pointTag":"PatrolRoute","animationState":"Patrolling","count":4,"arrivalTolerance":3.0},{"roleId":"Civilians","factionId":"Civilian","pointTag":"Observer","animationState":"Watching","count":3,"arrivalTolerance":3.0,"optional":true},{"roleId":"LudditeHiding","factionId":"Luddite","pointTag":"HidingSpot","animationState":"Hiding","count":2,"optional":true}],"_position":{"x":290.0},"$type":"MLA_SIM.Dooms.Scenes.Nodes.HoldPhaseNode","$id":"1"},{"phaseId":"Disperse","maxDurationSec":10.0,"roles":[],"_position":{"x":580.0},"$type":"MLA_SIM.Dooms.Scenes.Nodes.DispersePhaseNode","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"MLA_SIM.Dooms.Scenes.Nodes.SceneConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"MLA_SIM.Dooms.Scenes.Nodes.SceneConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.41
+    _category: 
+    _comments: 
+    _translation: {x: 0, y: 0}
+    _zoomFactor: 1
+  _haltSerialization: 0
+  _externalSerializationFile: {fileID: 0}

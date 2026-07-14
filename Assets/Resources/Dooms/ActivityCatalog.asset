@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5768635f526c6d4a88b9577cc93ed4d, type: 3}
+  m_Name: ActivityCatalog
+  m_EditorClassIdentifier: 
+  shared:
+  - activityName: drink
+    targetClass: SocialSpot
+    animatorStateName: Drinking
+    sequenceId: 
+    propId: WaterBottle
+    factionId: Civilian
+    hostilityTag: 
+    participantMode: 0
+    infectious: 0
+    holdSeconds: 10
+    restoresNeed: 1
+    restoreAmount: 2
+    needWeight: 0
+    timeStartHour: 0
+    timeEndHour: 0
+    timeBonus: 0
+    directiveMatchAction: 
+  - activityName: Talk
+    targetClass: SocialSpot
+    animatorStateName: Talk
+    sequenceId: 
+    propId: 
+    factionId: Civilian
+    hostilityTag: 
+    participantMode: 1
+    infectious: 0
+    holdSeconds: 40
+    restoresNeed: 2
+    restoreAmount: 10
+    needWeight: 0
+    timeStartHour: 0
+    timeEndHour: 0
+    timeBonus: 0
+    directiveMatchAction: 
+  factionOverrides:
+  - factionId: Guard
+    activities:
+    - activityName: Guard
+      targetClass: GuardLine
+      animatorStateName: Guarding
+      sequenceId: 
+      propId: MachineGun
+      factionId: Guard
+      hostilityTag: alert
+      participantMode: 0
+      infectious: 1
+      holdSeconds: 60
+      restoresNeed: 3
+      restoreAmount: 1
+      needWeight: 0.27
+      timeStartHour: 0
+      timeEndHour: 0
+      timeBonus: 0
+      directiveMatchAction: 

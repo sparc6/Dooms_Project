@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a40ef934945262a43a6777dfea8b2cb6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 14914
+  packageName: NodeCanvas
+  packageVersion: 3.4.1
+  assetPath: Assets/ParadoxNotion/CanvasCore/Common/Design/PartialEditor/SequencerEditor.cs
+  uploadId: 866614

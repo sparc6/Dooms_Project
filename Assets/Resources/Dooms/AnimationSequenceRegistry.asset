@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23f7992d10bfe948ade8c9879cc6516, type: 3}
+  m_Name: AnimationSequenceRegistry
+  m_EditorClassIdentifier: 
+  sequences:
+  - sequenceId: 
+    startState: 
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps:
+    - stateName: 
+      propId: 
+    - stateName: 
+      propId: 
+    startCrossfade: 0
+    endCrossfade: 0
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Bed
+    startState: Bed_Start
+    startPropId: 
+    loopState: Bed_Loop
+    loopPropId: 
+    endState: Bed_End
+    endPropId: 
+    holdSteps:
+    - stateName: Bed_Loop
+      propId: 
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Farming
+    startState: Farming_Start
+    startPropId: 
+    loopState: Farming_Loop
+    loopPropId: 
+    endState: Farming_End
+    endPropId: 
+    holdSteps:
+    - stateName: Farming_Loop
+      propId: 
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Fishing
+    startState: Fishing_Start
+    startPropId: 
+    loopState: Fishing_h1
+    loopPropId: 
+    endState: Fishing_End
+    endPropId: 
+    holdSteps:
+    - stateName: Fishing_h1
+      propId: 
+    - stateName: Fishing_h2
+      propId: 
+    - stateName: Fishing_h3
+      propId: 
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Sit
+    startState: Sit_Start
+    startPropId: 
+    loopState: Sit_Loop
+    loopPropId: 
+    endState: Sit_End
+    endPropId: 
+    holdSteps:
+    - stateName: Sit_Loop
+      propId: 
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: ShootBlend
+    startState: 
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 1
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: MachineGun
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ed044450574764c91a2dfd9a53afe6, type: 3}
+  m_Name: PropRegistry
+  m_EditorClassIdentifier: 
+  props:
+  - propId: Drill
+    itemId: Drill
+    prefab: {fileID: 6074139910492511235, guid: 789ae928084930341bd48fa980ecab17, type: 3}
+    defaultBone: Hand_R
+    localOffset: {x: 0.13, y: 0.01, z: 0.14}
+    localRotationEuler: {x: -10, y: 87, z: -102}
+    description: Drill for maintainance
+  - propId: Axe
+    itemId: Axe
+    prefab: {fileID: 8136735938742237660, guid: 3d7867eb307fa4a48b086d63f016002b, type: 3}
+    defaultBone: Hand_R
+    localOffset: {x: 0.09, y: 0.037, z: -0.09}
+    localRotationEuler: {x: 10.63, y: 168, z: -101}
+    description: Axe for chopping wood or heads.
+  - propId: MachineGun
+    itemId: MachineGun
+    prefab: {fileID: 2989696536348569323, guid: b0b378de70e4bb4489f053fc8606db93, type: 3}
+    defaultBone: Hand_R
+    localOffset: {x: 0.11, y: 0.021, z: -0.032}
+    localRotationEuler: {x: 195, y: -90, z: 74}
+    description: Shoot em all.
+  - propId: WaterBottle
+    itemId: WaterBottle
+    prefab: {fileID: 7928401234053793259, guid: 010f0b1aa0fdae34d999021b838fbdd5, type: 3}
+    defaultBone: Hand_L
+    localOffset: {x: 0, y: 0, z: 0}
+    localRotationEuler: {x: 0, y: 0, z: 0}
+    description: Drink some water please.

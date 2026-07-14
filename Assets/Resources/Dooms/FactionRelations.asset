@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcea521acc5451a478a11eeb80615352, type: 3}
+  m_Name: FactionRelations
+  m_EditorClassIdentifier: 
+  rows:
+  - fromFaction: Guard
+    cells:
+    - toFaction: Guard
+      relation: 1
+    - toFaction: Luddite
+      relation: 2
+    - toFaction: Builder
+      relation: 4
+    - toFaction: Server
+      relation: 1
+    - toFaction: Clone
+      relation: 3
+    - toFaction: Civilian
+      relation: 0
+  - fromFaction: Luddite
+    cells:
+    - toFaction: Guard
+      relation: 2
+    - toFaction: Luddite
+      relation: 1
+    - toFaction: Builder
+      relation: 0
+    - toFaction: Server
+      relation: 2
+    - toFaction: Clone
+      relation: 2
+    - toFaction: Civilian
+      relation: 0
+  - fromFaction: Builder
+    cells:
+    - toFaction: Guard
+      relation: 3
+    - toFaction: Luddite
+      relation: 0
+    - toFaction: Builder
+      relation: 0
+    - toFaction: Server
+      relation: 0
+    - toFaction: Clone
+      relation: 3
+    - toFaction: Civilian
+      relation: 0
+  - fromFaction: Server
+    cells:
+    - toFaction: Guard
+      relation: 1
+    - toFaction: Luddite
+      relation: 2
+    - toFaction: Builder
+      relation: 0
+    - toFaction: Server
+      relation: 1
+    - toFaction: Clone
+      relation: 3
+    - toFaction: Civilian
+      relation: 0
+  - fromFaction: Clone
+    cells:
+    - toFaction: Guard
+      relation: 4
+    - toFaction: Luddite
+      relation: 2
+    - toFaction: Builder
+      relation: 4
+    - toFaction: Server
+      relation: 4
+    - toFaction: Clone
+      relation: 4
+    - toFaction: Civilian
+      relation: 4
+  - fromFaction: Civilian
+    cells:
+    - toFaction: Guard
+      relation: 3
+    - toFaction: Luddite
+      relation: 0
+    - toFaction: Builder
+      relation: 0
+    - toFaction: Server
+      relation: 0
+    - toFaction: Clone
+      relation: 3
+    - toFaction: Civilian
+      relation: 0
