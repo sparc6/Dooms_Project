@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2f1deb100649b0a247864b1b059efb, type: 3}
+  m_Name: Nail_Hammer_InteractionPreset
+  m_EditorClassIdentifier: 
+  presetId: nail_hammer
+  tags:
+  - Construction
+  - Hammer
+  - Nail
+  snapAgentToPose: 1
+  attachmentBoneName: CC_Base_R_Hand
+  attachedLocalPosition: {x: 0, y: 0, z: 0}
+  attachedLocalEulerAngles: {x: 0, y: 0, z: 0}
+  attachedLocalScale: {x: 1, y: 1, z: 1}
+  returnPropWhenDone: 1
+  returnedLocalPosition: {x: 0, y: 0, z: 0}
+  returnedLocalEulerAngles: {x: 0, y: 0, z: 0}
+  animatorBoolName: nail
+  completionMode: 1
+  actionDuration: 2
+  resetBoolWhenDone: 1

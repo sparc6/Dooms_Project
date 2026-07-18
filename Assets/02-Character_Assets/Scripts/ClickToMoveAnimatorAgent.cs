@@ -144,8 +144,13 @@ public class ClickToMoveAnimatorAgent : MonoBehaviour
         }
 
         Ray ray = inputCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, clickRayDistance, clickableLayers, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(ray, out RaycastHit hit, clickRayDistance, clickableLayers, QueryTriggerInteraction.Collide))
         {
+            if (HasComponentInParent(hit.collider.transform, "AgentInteractionZone"))
+            {
+                return;
+            }
+
             MoveTo(hit.point);
         }
     }
@@ -265,5 +270,26 @@ public class ClickToMoveAnimatorAgent : MonoBehaviour
         navMeshAgent.speed = agentSpeed;
         navMeshAgent.stoppingDistance = stoppingDistance;
         navMeshAgent.updateRotation = updateRotationFromNavMeshAgent;
+    }
+
+    private static bool HasComponentInParent(Transform start, string componentTypeName)
+    {
+        Transform current = start;
+        while (current != null)
+        {
+            Component[] components = current.GetComponents<Component>();
+            for (int i = 0; i < components.Length; i++)
+            {
+                Component component = components[i];
+                if (component != null && component.GetType().Name == componentTypeName)
+                {
+                    return true;
+                }
+            }
+
+            current = current.parent;
+        }
+
+        return false;
     }
 }
