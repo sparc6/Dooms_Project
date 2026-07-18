@@ -20,7 +20,7 @@ MonoBehaviour:
   snapAgentToPose: 1
   attachmentBoneName: CC_Base_R_Hand
   attachedLocalPosition: {x: 0, y: 0, z: 0}
-  attachedLocalEulerAngles: {x: 0, y: 0, z: 0}
+  attachedLocalEulerAngles: {x: 90, y: 0, z: 0}
   attachedLocalScale: {x: 1, y: 1, z: 1}
   returnPropWhenDone: 1
   returnedLocalPosition: {x: 0, y: 0, z: 0}
