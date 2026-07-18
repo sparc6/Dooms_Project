@@ -30,6 +30,8 @@ public class AgentInteractionZone : MonoBehaviour
     [SerializeField] private Vector3 attachedLocalPosition;
     [SerializeField] private Vector3 attachedLocalEulerAngles;
     [SerializeField] private Vector3 attachedLocalScale = Vector3.one;
+    [SerializeField] private float propAttachmentTransitionDuration = 0.25f;
+    [SerializeField] private AnimationCurve propAttachmentTransitionCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     [SerializeField] private bool returnPropWhenDone = true;
 
     [Header("Prop Return Offset")]
@@ -52,6 +54,8 @@ public class AgentInteractionZone : MonoBehaviour
     public Vector3 AttachedLocalPosition => UsesPreset ? preset.AttachedLocalPosition : attachedLocalPosition;
     public Vector3 AttachedLocalEulerAngles => UsesPreset ? preset.AttachedLocalEulerAngles : attachedLocalEulerAngles;
     public Vector3 AttachedLocalScale => UsesPreset ? preset.AttachedLocalScale : attachedLocalScale;
+    public float PropAttachmentTransitionDuration => UsesPreset ? preset.PropAttachmentTransitionDuration : propAttachmentTransitionDuration;
+    public AnimationCurve PropAttachmentTransitionCurve => UsesPreset ? preset.PropAttachmentTransitionCurve : propAttachmentTransitionCurve;
     public bool ReturnPropWhenDone => UsesPreset ? preset.ReturnPropWhenDone : returnPropWhenDone;
     public Vector3 ReturnedLocalPosition => UsesPreset ? preset.ReturnedLocalPosition : returnedLocalPosition;
     public Vector3 ReturnedLocalEulerAngles => UsesPreset ? preset.ReturnedLocalEulerAngles : returnedLocalEulerAngles;
@@ -70,9 +74,15 @@ public class AgentInteractionZone : MonoBehaviour
     private void OnValidate()
     {
         actionDuration = Mathf.Max(0f, actionDuration);
+        propAttachmentTransitionDuration = Mathf.Max(0f, propAttachmentTransitionDuration);
         if (attachedLocalScale == Vector3.zero)
         {
             attachedLocalScale = Vector3.one;
+        }
+
+        if (propAttachmentTransitionCurve == null)
+        {
+            propAttachmentTransitionCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
         }
     }
 }

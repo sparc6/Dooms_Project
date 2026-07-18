@@ -181,6 +181,7 @@ public class AgentInteractionController : MonoBehaviour
 
         AttachProp(zone);
         SetAnimatorBool(zone.AnimatorBoolName, true);
+        yield return TransitionAttachedProp(zone);
 
         if (zone.CompletionMode == InteractionCompletionMode.Timed && zone.ActionDuration > 0f)
         {
@@ -269,10 +270,50 @@ public class AgentInteractionController : MonoBehaviour
             originalLocalScale = prop.localScale
         };
 
-        prop.SetParent(attachmentTarget, false);
-        prop.localPosition = zone.AttachedLocalPosition;
-        prop.localRotation = Quaternion.Euler(zone.AttachedLocalEulerAngles);
-        prop.localScale = zone.AttachedLocalScale;
+        prop.SetParent(attachmentTarget, true);
+    }
+
+    private IEnumerator TransitionAttachedProp(AgentInteractionZone zone)
+    {
+        if (activeProp == null || activeProp.prop == null || activeProp.prop != zone.Prop)
+        {
+            yield break;
+        }
+
+        Transform prop = activeProp.prop;
+        Vector3 startPosition = prop.localPosition;
+        Quaternion startRotation = prop.localRotation;
+        Vector3 startScale = prop.localScale;
+        Vector3 targetPosition = zone.AttachedLocalPosition;
+        Quaternion targetRotation = Quaternion.Euler(zone.AttachedLocalEulerAngles);
+        Vector3 targetScale = zone.AttachedLocalScale;
+        float duration = zone.PropAttachmentTransitionDuration;
+
+        if (duration <= 0f)
+        {
+            prop.localPosition = targetPosition;
+            prop.localRotation = targetRotation;
+            prop.localScale = targetScale;
+            yield break;
+        }
+
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float normalizedTime = Mathf.Clamp01(elapsed / duration);
+            AnimationCurve curve = zone.PropAttachmentTransitionCurve;
+            float transitionTime = curve != null ? curve.Evaluate(normalizedTime) : normalizedTime;
+
+            prop.localPosition = Vector3.LerpUnclamped(startPosition, targetPosition, transitionTime);
+            prop.localRotation = Quaternion.SlerpUnclamped(startRotation, targetRotation, transitionTime);
+            prop.localScale = Vector3.LerpUnclamped(startScale, targetScale, transitionTime);
+            yield return null;
+        }
+
+        prop.localPosition = targetPosition;
+        prop.localRotation = targetRotation;
+        prop.localScale = targetScale;
     }
 
     private void ReturnActiveProp(AgentInteractionZone zone)

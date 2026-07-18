@@ -16,6 +16,8 @@ public class AgentInteractionPreset : ScriptableObject
     [SerializeField] private Vector3 attachedLocalPosition;
     [SerializeField] private Vector3 attachedLocalEulerAngles;
     [SerializeField] private Vector3 attachedLocalScale = Vector3.one;
+    [SerializeField] private float propAttachmentTransitionDuration = 0.25f;
+    [SerializeField] private AnimationCurve propAttachmentTransitionCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     [SerializeField] private bool returnPropWhenDone = true;
 
     [Header("Prop Return Offset")]
@@ -34,6 +36,8 @@ public class AgentInteractionPreset : ScriptableObject
     public Vector3 AttachedLocalPosition => attachedLocalPosition;
     public Vector3 AttachedLocalEulerAngles => attachedLocalEulerAngles;
     public Vector3 AttachedLocalScale => attachedLocalScale;
+    public float PropAttachmentTransitionDuration => propAttachmentTransitionDuration;
+    public AnimationCurve PropAttachmentTransitionCurve => propAttachmentTransitionCurve;
     public bool ReturnPropWhenDone => returnPropWhenDone;
     public Vector3 ReturnedLocalPosition => returnedLocalPosition;
     public Vector3 ReturnedLocalEulerAngles => returnedLocalEulerAngles;
@@ -50,9 +54,15 @@ public class AgentInteractionPreset : ScriptableObject
     private void OnValidate()
     {
         actionDuration = Mathf.Max(0f, actionDuration);
+        propAttachmentTransitionDuration = Mathf.Max(0f, propAttachmentTransitionDuration);
         if (attachedLocalScale == Vector3.zero)
         {
             attachedLocalScale = Vector3.one;
+        }
+
+        if (propAttachmentTransitionCurve == null)
+        {
+            propAttachmentTransitionCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
         }
     }
 
