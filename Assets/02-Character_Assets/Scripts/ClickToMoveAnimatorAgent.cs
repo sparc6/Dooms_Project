@@ -26,6 +26,7 @@ public class ClickToMoveAnimatorAgent : MonoBehaviour
 
     [Header("Animator")]
     [SerializeField] private string speedParameter = "speed";
+    [SerializeField] private string turnDirectionParameter = "turnDirection";
     [SerializeField] private bool normalizeAnimatorSpeed = true;
     [SerializeField] private float animatorSpeedForFullBlend = 3.5f;
     [SerializeField] private float animatorDampTime = 0.1f;
@@ -33,9 +34,12 @@ public class ClickToMoveAnimatorAgent : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Animator animator;
     private int speedParameterHash;
+    private int turnDirectionParameterHash;
     private bool hasSpeedParameter;
+    private bool hasTurnDirectionParameter;
     private bool hasPendingDestination;
     private Vector3 pendingDestination;
+    private float turnDirection;
 
     public float AgentSpeed
     {
@@ -46,6 +50,8 @@ public class ClickToMoveAnimatorAgent : MonoBehaviour
             ApplyMovementSettings();
         }
     }
+
+    public float TurnDirection => turnDirection;
 
     private void Awake()
     {
@@ -159,12 +165,16 @@ public class ClickToMoveAnimatorAgent : MonoBehaviour
     {
         if (!hasPendingDestination)
         {
+            SetAnimatorTurnDirection(0f);
             return;
         }
+
+        SetAnimatorTurnDirection(GetTurnDirection(pendingDestination));
 
         if (RotateTowards(pendingDestination))
         {
             hasPendingDestination = false;
+            SetAnimatorTurnDirection(0f);
             StartMoveTo(pendingDestination);
         }
     }
@@ -209,6 +219,20 @@ public class ClickToMoveAnimatorAgent : MonoBehaviour
         return remainingAngle <= moveStartAngle;
     }
 
+    private float GetTurnDirection(Vector3 destination)
+    {
+        Vector3 toDestination = destination - transform.position;
+        toDestination.y = 0f;
+
+        if (toDestination.sqrMagnitude <= 0.0001f)
+        {
+            return 0f;
+        }
+
+        float signedAngle = Vector3.SignedAngle(transform.forward, toDestination.normalized, Vector3.up);
+        return Mathf.Abs(signedAngle) <= moveStartAngle ? 0f : Mathf.Sign(signedAngle);
+    }
+
     private void UpdateAnimatorSpeed()
     {
         if (navMeshAgent == null || animator == null || !hasSpeedParameter)
@@ -240,22 +264,46 @@ public class ClickToMoveAnimatorAgent : MonoBehaviour
         animator.SetFloat(speedParameterHash, value, animatorDampTime, Time.deltaTime);
     }
 
-    private void CacheAnimatorParameters()
+    private void SetAnimatorTurnDirection(float value)
     {
-        hasSpeedParameter = false;
+        turnDirection = value;
 
-        if (animator == null || string.IsNullOrWhiteSpace(speedParameter))
+        if (animator == null || !hasTurnDirectionParameter)
         {
             return;
         }
 
-        speedParameterHash = Animator.StringToHash(speedParameter);
+        animator.SetFloat(turnDirectionParameterHash, value, animatorDampTime, Time.deltaTime);
+    }
+
+    private void CacheAnimatorParameters()
+    {
+        hasSpeedParameter = false;
+        hasTurnDirectionParameter = false;
+
+        if (animator == null)
+        {
+            return;
+        }
+
+        speedParameterHash = string.IsNullOrWhiteSpace(speedParameter) ? 0 : Animator.StringToHash(speedParameter);
+        turnDirectionParameterHash = string.IsNullOrWhiteSpace(turnDirectionParameter) ? 0 : Animator.StringToHash(turnDirectionParameter);
+
         foreach (AnimatorControllerParameter parameter in animator.parameters)
         {
-            if (parameter.type == AnimatorControllerParameterType.Float && parameter.nameHash == speedParameterHash)
+            if (parameter.type != AnimatorControllerParameterType.Float)
+            {
+                continue;
+            }
+
+            if (parameter.nameHash == speedParameterHash)
             {
                 hasSpeedParameter = true;
-                return;
+            }
+
+            if (parameter.nameHash == turnDirectionParameterHash)
+            {
+                hasTurnDirectionParameter = true;
             }
         }
     }
