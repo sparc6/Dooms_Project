@@ -125,3 +125,192 @@ MonoBehaviour:
       value: 0.5
     - time01: 1
       value: 1
+  - sequenceId: Eating
+    startState: Eating_Start
+    startPropId: 
+    loopState: Eating_Loop
+    loopPropId: 
+    endState: Eating_End
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: 
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1
+  - sequenceId: PhoneCall
+    startState: PhoneCall_Start
+    startPropId: 
+    loopState: PhoneCall_Loop
+    loopPropId: 
+    endState: PhoneCall_End
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 1
+    endCrossfade: 1
+    useBlendTree: 0
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: 
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1
+  - sequenceId: DoomScroll
+    startState: DoomScroll_Start
+    startPropId: 
+    loopState: DoomScroll_Loop
+    loopPropId: 
+    endState: DoomScroll_End
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 1
+    endCrossfade: 1
+    useBlendTree: 0
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: 
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1
+  - sequenceId: Hug_1
+    startState: Hug_1_Start
+    startPropId: 
+    loopState: Hug_1_Loop
+    loopPropId: 
+    endState: Hug_1_End
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: 
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1
+  - sequenceId: Hug_2
+    startState: Hug_2_Start
+    startPropId: 
+    loopState: Hug_2_Loop
+    loopPropId: 
+    endState: Hug_2_End
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: 
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1
+  - sequenceId: Catatonic
+    startState: Catatonic_Start
+    startPropId: 
+    loopState: Catatonic_Loop
+    loopPropId: 
+    endState: Catatonic_End
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: 
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1
+  - sequenceId: Kissing_1
+    startState: Kissing_1_Start
+    startPropId: 
+    loopState: Kissing_1_Loop
+    loopPropId: 
+    endState: Kissing_1_End
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: 
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1
+  - sequenceId: Kissing_2
+    startState: Kissing_2_Start
+    startPropId: 
+    loopState: Kissing_2_Loop
+    loopPropId: 
+    endState: Kissing_2_End
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.15
+    endCrossfade: 0.15
+    useBlendTree: 0
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: 
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1
+  - sequenceId: Single_Action
+    startState: 
+    startPropId: 
+    loopState: Action
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 1
+    endCrossfade: 1
+    useBlendTree: 0
+    blendTreeState: ShootBlend
+    blendParam: AimBlend
+    blendPropId: 
+    blendKeys:
+    - time01: 0.2
+      value: 0
+    - time01: 0.5
+      value: 0.5
+    - time01: 1
+      value: 1

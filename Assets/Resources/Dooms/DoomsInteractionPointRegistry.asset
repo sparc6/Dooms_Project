@@ -30,3 +30,6 @@ MonoBehaviour:
   - EvacuationPoint
   - DetentionZone
   - FoodSpot
+  - Demo_DoomScroll
+  - Demo_PhoneCall
+  - Demo_Single_Action

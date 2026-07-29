@@ -1398,7 +1398,7 @@ namespace MLA_SIM.Dooms
             if (anchorT != null)
             {
                 Vector3 toAnchor = anchorT.position - transform.position; toAnchor.y = 0f;
-                if (toAnchor.sqrMagnitude <= 4f) // within ~2 m
+                if (toAnchor.sqrMagnitude <= 1f) // within ~0.5 m Previously was 4f
                     transform.position = anchorT.position;
                 Vector3 fwd = anchorT.forward; fwd.y = 0f;
                 if (fwd.sqrMagnitude > 0.0001f)
