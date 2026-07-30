@@ -27450,7 +27450,7 @@ PrefabInstance:
     - target: {fileID: 95485316127981514, guid: 0a08fd84400ab0c41b7a22b7fd0b90a3, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6923a1e5696fc1a428a2d721a19753f5, type: 2}
+      objectReference: {fileID: 9100000, guid: 7f2e8dc7b91077c41834e20f46bc0051, type: 2}
     - target: {fileID: 95485316127981514, guid: 0a08fd84400ab0c41b7a22b7fd0b90a3, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -35374,7 +35374,7 @@ PrefabInstance:
     - target: {fileID: 95485316127981514, guid: 0a08fd84400ab0c41b7a22b7fd0b90a3, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6923a1e5696fc1a428a2d721a19753f5, type: 2}
+      objectReference: {fileID: 9100000, guid: 7f2e8dc7b91077c41834e20f46bc0051, type: 2}
     - target: {fileID: 95485316127981514, guid: 0a08fd84400ab0c41b7a22b7fd0b90a3, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -95594,6 +95594,28 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7762023718115244742, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: fa7ab075f86558840817f3219cf837ae, type: 3}
+    - target: {fileID: 7762023718115244742, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7f2e8dc7b91077c41834e20f46bc0051, type: 2}
+    - target: {fileID: 7762023718115244742, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'CC_Base_R_Mid1'\n\tTransform 'CC_Base_NeckTwist01'\n\tTransform
+        'CC_Base_R_Thumb1'\n\tTransform 'CC_Base_L_Calf'\n\tTransform 'CC_Base_Waist'\n\tTransform
+        'CC_Base_L_ToeBase'\n\tTransform 'root'\n\tTransform 'CC_Base_JawRoot'\n\tTransform
+        'CC_Base_Head'\n\tTransform 'CC_Base_L_Mid1'\n\tand more ...\n\tFrom animation
+        clip 'Tip_L_In_Place'\n\tFrom animation clip 'Tip_R_In_place'\n\tFrom animation
+        clip 'plastering'\n\tFrom animation clip 'plastering'\n\tFrom animation clip
+        'plastering'\n\tFrom animation clip 'drill-floor'\n\tFrom animation clip
+        'drill-floor'\n\tFrom animation clip 'drill-floor'\n\tFrom animation clip
+        'bounding-rebar-02'\n\tFrom animation clip 'paving-cement'\n\tand more ..."
+      objectReference: {fileID: 0}
     - target: {fileID: 8379940516740722966, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.35
