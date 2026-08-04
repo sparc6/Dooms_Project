@@ -2651,6 +2651,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &47811048
 CharacterController:
@@ -5519,6 +5525,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &113369872
 CharacterController:
@@ -8914,6 +8926,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &213921162
 CharacterController:
@@ -10769,6 +10787,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &263223058
 CharacterController:
@@ -12899,6 +12923,12 @@ MonoBehaviour:
   - Talk
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &307584759
 CharacterController:
@@ -14684,6 +14714,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &338463754
 CharacterController:
@@ -15283,6 +15319,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &352316613
 CharacterController:
@@ -17187,6 +17229,12 @@ MonoBehaviour:
   - Talk
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &384041899
 CharacterController:
@@ -21063,6 +21111,12 @@ MonoBehaviour:
   - Talk
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &471039917
 CharacterController:
@@ -22557,6 +22611,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &514795126
 CharacterController:
@@ -25479,6 +25539,12 @@ MonoBehaviour:
   - Talk
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &560591530
 CharacterController:
@@ -26121,6 +26187,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &573967341
 CharacterController:
@@ -26934,6 +27006,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &578150965
 CharacterController:
@@ -28949,6 +29027,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &615428545
 CharacterController:
@@ -29786,6 +29870,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &628041447
 CharacterController:
@@ -32806,6 +32896,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &719464778
 CharacterController:
@@ -33815,6 +33911,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &729755037
 CharacterController:
@@ -36606,6 +36708,12 @@ MonoBehaviour:
   - Talk
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &771204956
 CharacterController:
@@ -37097,6 +37205,12 @@ MonoBehaviour:
   - Talk
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &779280129
 CharacterController:
@@ -42674,6 +42788,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &947407160
 CharacterController:
@@ -47080,6 +47200,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1037178944
 CharacterController:
@@ -48994,6 +49120,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1103036015
 CharacterController:
@@ -49590,6 +49722,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1113384304
 CharacterController:
@@ -52633,6 +52771,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1169938100
 CharacterController:
@@ -53812,6 +53956,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1181930736
 CharacterController:
@@ -54758,6 +54908,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1214530442
 CharacterController:
@@ -59481,6 +59637,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1354652991
 CharacterController:
@@ -60807,6 +60969,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1379490497
 CharacterController:
@@ -63556,6 +63724,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1437275774
 CharacterController:
@@ -65637,6 +65811,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1501378762
 CharacterController:
@@ -66903,6 +67083,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1525685326
 CharacterController:
@@ -70765,6 +70951,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1596364148
 CharacterController:
@@ -74156,6 +74348,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1683365495
 CharacterController:
@@ -82050,6 +82248,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1903415229
 CharacterController:
@@ -84454,6 +84658,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1927636764
 CharacterController:
@@ -85331,6 +85541,12 @@ MonoBehaviour:
   - Talk
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1936853007
 CharacterController:
@@ -86195,6 +86411,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1938428161
 CharacterController:
@@ -87277,6 +87499,12 @@ MonoBehaviour:
   - Talk
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &1953104967
 CharacterController:
@@ -90141,6 +90369,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &2023995936
 CharacterController:
@@ -94943,6 +95177,12 @@ MonoBehaviour:
   agentVarianceStateNames: []
   actionEnterCrossfade: 0.22
   actionReturnCrossfade: 0.3
+  useControllerActionTransitions: 1
+  actionIdParam: ActionId
+  actionRequestParam: ActionRequest
+  actionActiveParam: ActionActive
+  actionInterruptParam: ActionInterrupt
+  actionVariantParam: ActionVariant
   movingSpeedThreshold: 0.1
 --- !u!143 &2131628439
 CharacterController:
@@ -95312,6 +95552,45 @@ MonoBehaviour:
   infectious: 0
   allowedFactions:
   - Guard
+--- !u!1 &910000000000000001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9151410292822617004, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
+  m_PrefabInstance: {fileID: 6656364542428398840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &910000000000000002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910000000000000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d7ab2e59b54a77aa32f8ed02bc2dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 1
+  loop: 1
+  pauseT4Brain: 1
+  startDelay: 1
+  transitionPause: 1
+  playlist:
+  - sequenceId: DoomScroll
+    holdSeconds: 6
+  - sequenceId: PhoneCall
+    holdSeconds: 6
+  - sequenceId: Eating
+    holdSeconds: 6
+  - sequenceId: Catatonic
+    holdSeconds: 6
+  - sequenceId: Sit
+    holdSeconds: 6
+  - sequenceId: Farming
+    holdSeconds: 6
+  - sequenceId: Fishing
+    holdSeconds: 8
+  - sequenceId: ShootBlend
+    holdSeconds: 5
 --- !u!1 &2114283753834967212
 GameObject:
   m_ObjectHideFlags: 0
@@ -95601,20 +95880,29 @@ PrefabInstance:
     - target: {fileID: 7762023718115244742, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7f2e8dc7b91077c41834e20f46bc0051, type: 2}
+      objectReference: {fileID: 9100000, guid: 6809b119b6b845944afcb1f1f2d0dff0, type: 2}
+    - target: {fileID: 7762023718115244742, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7762023718115244742, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
       propertyPath: m_WarningMessage
       value: "\nBinding warning: Some generic clip(s) animate transforms that are
         already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'CC_Base_R_Mid1'\n\tTransform 'CC_Base_NeckTwist01'\n\tTransform
-        'CC_Base_R_Thumb1'\n\tTransform 'CC_Base_L_Calf'\n\tTransform 'CC_Base_Waist'\n\tTransform
-        'CC_Base_L_ToeBase'\n\tTransform 'root'\n\tTransform 'CC_Base_JawRoot'\n\tTransform
-        'CC_Base_Head'\n\tTransform 'CC_Base_L_Mid1'\n\tand more ...\n\tFrom animation
-        clip 'Tip_L_In_Place'\n\tFrom animation clip 'Tip_R_In_place'\n\tFrom animation
-        clip 'plastering'\n\tFrom animation clip 'plastering'\n\tFrom animation clip
-        'plastering'\n\tFrom animation clip 'drill-floor'\n\tFrom animation clip
-        'drill-floor'\n\tFrom animation clip 'drill-floor'\n\tFrom animation clip
-        'bounding-rebar-02'\n\tFrom animation clip 'paving-cement'\n\tand more ..."
+        by Humanoid clips.\n\tTransform 'CC_Base_NeckTwist01'\n\tTransform 'CC_Base_L_Calf'\n\tTransform
+        'CC_Base_Waist'\n\tTransform 'CC_Base_L_ToeBase'\n\tTransform 'root'\n\tTransform
+        'CC_Base_JawRoot'\n\tTransform 'CC_Base_Head'\n\tTransform 'CC_Base_R_Upperarm'\n\tTransform
+        'CC_Base_L_Ring1'\n\tTransform 'CC_Base_R_Index3'\n\tand more ...\n\tFrom
+        animation clip 'paving-cement'\n\tFrom animation clip 'rolling-cylinder-02'\n\tFrom
+        animation clip 'lift-plate-01'\n\tFrom animation clip 'surveying-duo-02'\n\tFrom
+        animation clip 'pick-up-353767'\n\tFrom animation clip 'inspect-plans-01'\n\tFrom
+        animation clip 'tamping-cement-wood-01'\n\tFrom animation clip 'measuring-duo-01'\n\tFrom
+        animation clip 'lift-long-pipe-01'\n\tFrom animation clip 'concrete-tamping-duo-01'\n\tand
+        more ..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762023718115244742, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8379940516740722966, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -95663,7 +95951,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9151410292822617004, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 910000000000000002}
   m_SourcePrefab: {fileID: 100100000, guid: ccfd83ede83028f43a163b4e3971499b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

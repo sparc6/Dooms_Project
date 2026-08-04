@@ -74,6 +74,15 @@ namespace MLA_SIM
         [Tooltip("Crossfade (s) when returning to locomotion after an action. Slightly longer reads smoother.")]
         public float actionReturnCrossfade = 0.30f;
 
+        [Header("Controller-Driven Actions")]
+        [Tooltip("Use the shared action parameter protocol when both the sequence and assigned Animator Controller support it. Controllers without the protocol keep the legacy direct-state path.")]
+        public bool useControllerActionTransitions = true;
+        public string actionIdParam = "ActionId";
+        public string actionRequestParam = "ActionRequest";
+        public string actionActiveParam = "ActionActive";
+        public string actionInterruptParam = "ActionInterrupt";
+        public string actionVariantParam = "ActionVariant";
+
         [Header("Movement Flags")]
         public float movingSpeedThreshold = 0.10f; // m/s to set IsMoving
 
@@ -90,8 +99,14 @@ namespace MLA_SIM
 
         // ---- Plan M4: cached set of state name hashes on the base layer for O(1) Has() checks. ----
         private HashSet<int> _baseLayerStateHashes;
-        // Active timed action state (when callers passed holdSeconds > 0). Cleared by Update.
+        // Active timed action state. Controller-driven actions and the legacy path share this
+        // routine so replacement and interruption keep the public T4 API deterministic.
         private Coroutine _holdRoutine;
+        private readonly Dictionary<string, AnimatorControllerParameterType> _animatorParamTypes = new();
+        private readonly Dictionary<int, string> _trackedControllerStates = new();
+        private ActionAnimSequence _activeControllerSequence;
+        private int _lastReportedControllerStateHash;
+        private bool _controllerActionStateEntered;
 
         // Agent variance re-roll tracking
         private HashSet<int> _agentVarianceStateHashes = new HashSet<int>();
@@ -171,9 +186,11 @@ namespace MLA_SIM
         {
             _hasFloatParam.Clear();
             _hasBoolParam.Clear();
+            _animatorParamTypes.Clear();
             if (_animator == null) return;
             foreach (var p in _animator.parameters)
             {
+                _animatorParamTypes[p.name] = p.type;
                 if (p.type == AnimatorControllerParameterType.Float)
                 {
                     _hasFloatParam[p.name] = true;
@@ -273,6 +290,7 @@ namespace MLA_SIM
             }
 
             UpdateAgentVarianceReroll();
+            UpdateControllerActionStateTracking();
         }
 
         // Event fired when an action state transitions
@@ -289,11 +307,8 @@ namespace MLA_SIM
         }
 
         // ---------------------------------------------------------------
-        // Plan M4: Unified action state entry point.
-        //
-        // Replaces the per-action bool-parameter explosion with a single call
-        // that crossfades the Animator base layer to a state named exactly
-        // after the action verb (e.g. "Fix", "Pickup", "Talk", "Build").
+        // Unified action entry point. Registered controller actions use the
+        // shared parameter protocol; unregistered states retain direct playback.
         //
         // Callers (interaction points, DOOMS brains, NPC pickers) pass:
         //   - stateName     : Animator state on base layer
@@ -308,6 +323,14 @@ namespace MLA_SIM
         public bool PlayActionState(string stateName, float crossfade = 0.15f, float holdSeconds = -1f)
         {
             if (_animator == null || string.IsNullOrEmpty(stateName)) return false;
+
+            var registry = AnimationSequenceRegistry.Instance;
+            var controllerSequence = registry != null ? registry.FindSequence(stateName) : null;
+            if (CanUseControllerAction(controllerSequence))
+            {
+                return PlayControllerAction(controllerSequence, holdSeconds);
+            }
+
             EnsureBaseLayerStateCache();
             int hash = Animator.StringToHash(stateName);
             // _baseLayerStateHashes == null means "we couldn't enumerate" (build / runtime)
@@ -316,6 +339,7 @@ namespace MLA_SIM
             {
                 return false;
             }
+            CancelActivePlaybackForReplacement();
             float fade = Mathf.Max(0f, crossfade);
             if (fade <= 0.001f)
                 _animator.Play(hash, 0, 0f);
@@ -325,11 +349,6 @@ namespace MLA_SIM
             // Fire state change event
             RaiseStateChanged(stateName);
 
-            if (_holdRoutine != null)
-            {
-                StopCoroutine(_holdRoutine);
-                _holdRoutine = null;
-            }
             if (holdSeconds > 0f)
             {
                 _holdRoutine = StartCoroutine(ReturnToLocomotionAfter(holdSeconds, fade));
@@ -349,12 +368,21 @@ namespace MLA_SIM
                 return PlayActionState(sequenceId, actionEnterCrossfade, holdSeconds);
             }
 
-            if (_holdRoutine != null)
+            if (CanUseControllerAction(seq))
             {
-                StopCoroutine(_holdRoutine);
-                _holdRoutine = null;
+                return PlayControllerAction(seq, holdSeconds);
             }
 
+            // A registered one-state action (for example Dying) must preserve the
+            // legacy indefinite hold behavior on controllers without the protocol.
+            if (!seq.useBlendTree && !string.IsNullOrEmpty(seq.startState)
+                && string.IsNullOrEmpty(seq.loopState) && !seq.HasHoldSteps
+                && string.IsNullOrEmpty(seq.endState))
+            {
+                return PlayActionState(seq.startState, seq.startCrossfade, holdSeconds);
+            }
+
+            CancelActivePlaybackForReplacement();
             _holdRoutine = seq.useBlendTree
                 ? StartCoroutine(ExecuteBlendTreeCo(seq, holdSeconds))
                 : StartCoroutine(ExecuteSequenceCo(seq, holdSeconds));
@@ -371,6 +399,27 @@ namespace MLA_SIM
 
             if (_animator == null || !_animator.gameObject.activeInHierarchy) return;
 
+            if (_activeControllerSequence != null)
+            {
+                bool wasEnding = HasParameter(actionActiveParam, AnimatorControllerParameterType.Bool)
+                    && !_animator.GetBool(actionActiveParam);
+
+                SetControllerActionActive(false);
+                if (returnToLocomotion && !wasEnding
+                    && HasParameter(actionInterruptParam, AnimatorControllerParameterType.Trigger))
+                {
+                    _animator.ResetTrigger(actionRequestParam);
+                    _animator.SetTrigger(actionInterruptParam);
+                    RaiseStateChanged(locomotionStateName);
+                    ClearControllerActionTracking();
+                }
+                else if (!returnToLocomotion)
+                {
+                    ClearControllerActionTracking();
+                }
+                return;
+            }
+
             if (returnToLocomotion)
             {
                 int locoHash = Animator.StringToHash(locomotionStateName);
@@ -379,8 +428,209 @@ namespace MLA_SIM
             }
         }
 
+        private bool CanUseControllerAction(ActionAnimSequence sequence)
+        {
+            return useControllerActionTransitions
+                && sequence != null
+                && sequence.controllerActionId > 0
+                && HasParameter(actionIdParam, AnimatorControllerParameterType.Int)
+                && HasParameter(actionRequestParam, AnimatorControllerParameterType.Trigger)
+                && HasParameter(actionActiveParam, AnimatorControllerParameterType.Bool)
+                && HasParameter(actionInterruptParam, AnimatorControllerParameterType.Trigger);
+        }
+
+        private bool HasParameter(string parameterName, AnimatorControllerParameterType expectedType)
+        {
+            return !string.IsNullOrEmpty(parameterName)
+                && _animatorParamTypes.TryGetValue(parameterName, out var actualType)
+                && actualType == expectedType;
+        }
+
+        private bool PlayControllerAction(ActionAnimSequence sequence, float holdSeconds)
+        {
+            CancelActivePlaybackForReplacement();
+
+            _activeControllerSequence = sequence;
+            BuildControllerStateTracking(sequence);
+
+            _animator.ResetTrigger(actionRequestParam);
+            if (HasParameter(actionInterruptParam, AnimatorControllerParameterType.Trigger))
+            {
+                _animator.ResetTrigger(actionInterruptParam);
+            }
+
+            _animator.SetInteger(actionIdParam, sequence.controllerActionId);
+            if (HasParameter(actionVariantParam, AnimatorControllerParameterType.Int))
+            {
+                _animator.SetInteger(actionVariantParam, Mathf.Max(0, sequence.controllerActionVariant));
+            }
+
+            SetControllerActionActive(true);
+            _animator.SetTrigger(actionRequestParam);
+
+            if (holdSeconds > 0f)
+            {
+                _holdRoutine = StartCoroutine(RunControllerActionWindow(sequence, holdSeconds));
+            }
+            return true;
+        }
+
+        private System.Collections.IEnumerator RunControllerActionWindow(ActionAnimSequence sequence, float holdSeconds)
+        {
+            float duration = Mathf.Max(0f, holdSeconds);
+            float endLead = string.IsNullOrEmpty(sequence.endState)
+                ? 0f
+                : Mathf.Clamp(sequence.controllerEndLeadSeconds, 0f, duration);
+            float endAt = Mathf.Max(0f, duration - endLead);
+            float elapsed = 0f;
+            bool endRequested = false;
+
+            while (elapsed < duration)
+            {
+                if (!endRequested && elapsed >= endAt)
+                {
+                    SetControllerActionActive(false);
+                    endRequested = true;
+                }
+
+                UpdateControllerBlend(sequence, elapsed, duration);
+                yield return null;
+                elapsed += Time.deltaTime;
+            }
+
+            if (!endRequested)
+            {
+                SetControllerActionActive(false);
+            }
+            UpdateControllerBlend(sequence, duration, duration);
+            _holdRoutine = null;
+        }
+
+        private void UpdateControllerBlend(ActionAnimSequence sequence, float elapsed, float duration)
+        {
+            if (!sequence.useBlendTree || string.IsNullOrEmpty(sequence.blendParam)
+                || !_hasFloatParam.TryGetValue(sequence.blendParam, out bool hasBlend) || !hasBlend)
+            {
+                return;
+            }
+
+            var keys = sequence.blendKeys;
+            if (keys == null || keys.Count == 0) return;
+            float normalizedTime = duration > 0f ? Mathf.Clamp01(elapsed / duration) : 1f;
+            _animator.SetFloat(sequence.blendParam, EvaluateBlend(keys, normalizedTime));
+        }
+
+        private void SetControllerActionActive(bool active)
+        {
+            if (HasParameter(actionActiveParam, AnimatorControllerParameterType.Bool))
+            {
+                _animator.SetBool(actionActiveParam, active);
+            }
+        }
+
+        private void CancelActivePlaybackForReplacement()
+        {
+            if (_holdRoutine != null)
+            {
+                StopCoroutine(_holdRoutine);
+                _holdRoutine = null;
+            }
+
+            if (_activeControllerSequence != null)
+            {
+                SetControllerActionActive(false);
+                ClearControllerActionTracking();
+            }
+        }
+
+        private void BuildControllerStateTracking(ActionAnimSequence sequence)
+        {
+            _trackedControllerStates.Clear();
+            _lastReportedControllerStateHash = 0;
+            _controllerActionStateEntered = false;
+
+            TrackControllerState(sequence.startState);
+            if (sequence.useBlendTree)
+            {
+                TrackControllerState(sequence.blendTreeState);
+            }
+            else
+            {
+                var steps = sequence.GetHoldSteps();
+                if (steps != null)
+                {
+                    for (int i = 0; i < steps.Count; i++)
+                    {
+                        if (steps[i] != null) TrackControllerState(steps[i].stateName);
+                    }
+                }
+            }
+            TrackControllerState(sequence.endState);
+            TrackControllerState(locomotionStateName);
+        }
+
+        private void TrackControllerState(string stateName)
+        {
+            if (string.IsNullOrEmpty(stateName)) return;
+            _trackedControllerStates[Animator.StringToHash(stateName)] = stateName;
+        }
+
+        private void UpdateControllerActionStateTracking()
+        {
+            if (_activeControllerSequence == null || _animator == null) return;
+
+            var stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            int stateHash = stateInfo.shortNameHash;
+            if (_animator.IsInTransition(0))
+            {
+                int nextHash = _animator.GetNextAnimatorStateInfo(0).shortNameHash;
+                if (_trackedControllerStates.ContainsKey(nextHash))
+                {
+                    stateHash = nextHash;
+                }
+            }
+
+            if (stateHash == _lastReportedControllerStateHash
+                || !_trackedControllerStates.TryGetValue(stateHash, out string stateName))
+            {
+                return;
+            }
+
+            bool isLocomotion = string.Equals(
+                stateName,
+                locomotionStateName,
+                System.StringComparison.OrdinalIgnoreCase);
+            if (isLocomotion && !_controllerActionStateEntered)
+            {
+                return;
+            }
+
+            if (!isLocomotion)
+            {
+                _controllerActionStateEntered = true;
+            }
+
+            _lastReportedControllerStateHash = stateHash;
+            RaiseStateChanged(stateName);
+
+            if (isLocomotion)
+            {
+                ClearControllerActionTracking();
+            }
+        }
+
+        private void ClearControllerActionTracking()
+        {
+            _activeControllerSequence = null;
+            _trackedControllerStates.Clear();
+            _lastReportedControllerStateHash = 0;
+            _controllerActionStateEntered = false;
+        }
+
         private System.Collections.IEnumerator ExecuteSequenceCo(ActionAnimSequence seq, float holdSeconds)
         {
+            float sequenceStartedAt = Time.time;
+            bool hasTotalBudget = holdSeconds > 0f;
             float startFade = Mathf.Max(0f, seq.startCrossfade);
 
             if (!string.IsNullOrEmpty(seq.startState))
@@ -391,8 +641,12 @@ namespace MLA_SIM
             var holdSteps = seq.GetHoldSteps();
             if (holdSteps != null && holdSteps.Count > 0)
             {
-                bool hasBudget = holdSeconds > 0f;
-                float budget = Mathf.Max(0f, holdSeconds);
+                float endLead = string.IsNullOrEmpty(seq.endState)
+                    ? 0f
+                    : Mathf.Clamp(seq.controllerEndLeadSeconds, 0f, Mathf.Max(0f, holdSeconds));
+                float loopDeadline = sequenceStartedAt + Mathf.Max(0f, holdSeconds - endLead);
+                bool hasBudget = hasTotalBudget;
+                float budget = hasBudget ? Mathf.Max(0f, loopDeadline - Time.time) : 0f;
                 float elapsed = 0f;
                 int stepIndex = 0;
                 int guard = 0;
@@ -410,7 +664,16 @@ namespace MLA_SIM
 
                         RaiseStateChanged(step.stateName);
 
-                        yield return new WaitForSeconds(startFade);
+                        float fadeWait = startFade;
+                        if (hasBudget)
+                        {
+                            fadeWait = Mathf.Min(fadeWait, Mathf.Max(0f, budget - elapsed));
+                        }
+                        if (fadeWait > 0f)
+                        {
+                            yield return new WaitForSeconds(fadeWait);
+                            elapsed += fadeWait;
+                        }
 
                         var stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
                         float stepWait = stateInfo.length > 0f
@@ -453,9 +716,16 @@ namespace MLA_SIM
                 }
                 while (!hasBudget || elapsed < budget);
             }
-            else if (holdSeconds > 0f)
+            else if (hasTotalBudget)
             {
-                yield return new WaitForSeconds(holdSeconds);
+                float endLead = string.IsNullOrEmpty(seq.endState)
+                    ? 0f
+                    : Mathf.Clamp(seq.controllerEndLeadSeconds, 0f, holdSeconds);
+                float remaining = Mathf.Max(0f, sequenceStartedAt + holdSeconds - endLead - Time.time);
+                if (remaining > 0f)
+                {
+                    yield return new WaitForSeconds(remaining);
+                }
             }
 
             float endFade = Mathf.Max(0f, seq.endCrossfade);

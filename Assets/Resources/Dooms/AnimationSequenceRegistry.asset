@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequences:
   - sequenceId: 
+    controllerActionId: 0
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
     startState: 
     startPropId: 
     loopState: 
@@ -33,6 +36,9 @@ MonoBehaviour:
     blendPropId: 
     blendKeys: []
   - sequenceId: Bed
+    controllerActionId: 10
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Bed_Start
     startPropId: 
     loopState: Bed_Loop
@@ -50,6 +56,9 @@ MonoBehaviour:
     blendPropId: 
     blendKeys: []
   - sequenceId: Farming
+    controllerActionId: 11
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Farming_Start
     startPropId: 
     loopState: Farming_Loop
@@ -67,6 +76,9 @@ MonoBehaviour:
     blendPropId: 
     blendKeys: []
   - sequenceId: Fishing
+    controllerActionId: 12
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Fishing_Start
     startPropId: 
     loopState: Fishing_h1
@@ -88,6 +100,9 @@ MonoBehaviour:
     blendPropId: 
     blendKeys: []
   - sequenceId: Sit
+    controllerActionId: 9
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Sit_Start
     startPropId: 
     loopState: Sit_Loop
@@ -105,6 +120,9 @@ MonoBehaviour:
     blendPropId: 
     blendKeys: []
   - sequenceId: ShootBlend
+    controllerActionId: 13
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
     startState: 
     startPropId: 
     loopState: 
@@ -126,6 +144,9 @@ MonoBehaviour:
     - time01: 1
       value: 1
   - sequenceId: Eating
+    controllerActionId: 3
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Eating_Start
     startPropId: 
     loopState: Eating_Loop
@@ -147,6 +168,9 @@ MonoBehaviour:
     - time01: 1
       value: 1
   - sequenceId: PhoneCall
+    controllerActionId: 2
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: PhoneCall_Start
     startPropId: 
     loopState: PhoneCall_Loop
@@ -168,27 +192,27 @@ MonoBehaviour:
     - time01: 1
       value: 1
   - sequenceId: DoomScroll
-    startState: DoomScroll_Start
+    controllerActionId: 1
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: Doom_Scrolling
     startPropId: 
-    loopState: DoomScroll_Loop
+    loopState: 
     loopPropId: 
-    endState: DoomScroll_End
+    endState: 
     endPropId: 
     holdSteps: []
-    startCrossfade: 1
-    endCrossfade: 1
+    startCrossfade: 0.25
+    endCrossfade: 0.35
     useBlendTree: 0
-    blendTreeState: ShootBlend
-    blendParam: AimBlend
+    blendTreeState: 
+    blendParam: 
     blendPropId: 
-    blendKeys:
-    - time01: 0.2
-      value: 0
-    - time01: 0.5
-      value: 0.5
-    - time01: 1
-      value: 1
+    blendKeys: []
   - sequenceId: Hug_1
+    controllerActionId: 5
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Hug_1_Start
     startPropId: 
     loopState: Hug_1_Loop
@@ -210,6 +234,9 @@ MonoBehaviour:
     - time01: 1
       value: 1
   - sequenceId: Hug_2
+    controllerActionId: 6
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Hug_2_Start
     startPropId: 
     loopState: Hug_2_Loop
@@ -231,6 +258,9 @@ MonoBehaviour:
     - time01: 1
       value: 1
   - sequenceId: Catatonic
+    controllerActionId: 4
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Catatonic_Start
     startPropId: 
     loopState: Catatonic_Loop
@@ -252,6 +282,9 @@ MonoBehaviour:
     - time01: 1
       value: 1
   - sequenceId: Kissing_1
+    controllerActionId: 7
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Kissing_1_Start
     startPropId: 
     loopState: Kissing_1_Loop
@@ -273,6 +306,9 @@ MonoBehaviour:
     - time01: 1
       value: 1
   - sequenceId: Kissing_2
+    controllerActionId: 8
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0.75
     startState: Kissing_2_Start
     startPropId: 
     loopState: Kissing_2_Loop
@@ -294,6 +330,9 @@ MonoBehaviour:
     - time01: 1
       value: 1
   - sequenceId: Single_Action
+    controllerActionId: 14
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
     startState: 
     startPropId: 
     loopState: Action
@@ -314,3 +353,75 @@ MonoBehaviour:
       value: 0.5
     - time01: 1
       value: 1
+  - sequenceId: Dying
+    controllerActionId: 100
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: Dying
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.2
+    endCrossfade: 0.2
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Pair_Hug
+    controllerActionId: 15
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: long-hug-m2-392449
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Pair_Kiss_M
+    controllerActionId: 16
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: farewell-kiss-m
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Pair_Kiss_F
+    controllerActionId: 17
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: farewell-kiss-f
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []

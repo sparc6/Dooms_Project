@@ -25,6 +25,15 @@ namespace MLA_SIM
     public class ActionAnimSequence
     {
         public string sequenceId = "";
+
+        [Header("Animator Controller Routing (optional)")]
+        [Tooltip("ActionId used by controllers that expose the shared ActionId/ActionRequest/ActionActive protocol. Zero keeps the legacy direct-state playback path.")]
+        [Min(0)] public int controllerActionId = 0;
+        [Tooltip("ActionVariant value supplied to the Animator when this sequence starts.")]
+        [Min(0)] public int controllerActionVariant = 0;
+        [Tooltip("Seconds reserved at the end of the total holdSeconds window for the authored End state. Ignored when the sequence has no End state.")]
+        [Min(0f)] public float controllerEndLeadSeconds = 0.75f;
+
         public string startState = "";
         [RegistryDropdown(RegistryType.Prop)]
         public string startPropId = "";
