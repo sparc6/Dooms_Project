@@ -128,11 +128,7 @@ namespace MLA_SIM
 
                     yield return MoveBothParticipantsToAnchors(anchors.maleAnchor, anchors.femaleAnchor);
 
-                    if (!AlignAndPauseParticipants(anchors.maleAnchor, anchors.femaleAnchor))
-                    {
-                        Debug.LogWarning($"[PairedAnimationDemo] Could not align participants for '{actionId}'.", this);
-                        continue;
-                    }
+                    yield return AlignAndPauseParticipants(anchors.maleAnchor, anchors.femaleAnchor);
 
                     float hold = Mathf.Max(0.1f, definition.holdSeconds);
                     bool maleStarted = maleParticipant.Driver.PlayActionSequence(definition.maleSequenceId, hold);
@@ -210,6 +206,9 @@ namespace MLA_SIM
             bool femaleReady = false;
             while (elapsed < approachTimeout && (!maleReady || !femaleReady))
             {
+                UpdatePairedApproach(maleParticipant, maleAnchor);
+                UpdatePairedApproach(femaleParticipant, femaleAnchor);
+
                 maleReady = HasArrived(maleParticipant, maleAnchor.position);
                 femaleReady = HasArrived(femaleParticipant, femaleAnchor.position);
 
@@ -218,6 +217,15 @@ namespace MLA_SIM
 
                 elapsed += Time.deltaTime;
                 yield return null;
+            }
+        }
+
+        private static void UpdatePairedApproach(PairedAnimationParticipant participant, Transform anchor)
+        {
+            if (participant != null && participant.Driver != null && anchor != null)
+            {
+                participant.Driver.UpdatePairedInteractionApproach(anchor.position);
+                participant.Driver.UpdateAnchorApproach(anchor);
             }
         }
 
@@ -248,39 +256,29 @@ namespace MLA_SIM
             return nav.remainingDistance <= threshold;
         }
 
-        private bool AlignAndPauseParticipants(Transform maleAnchor, Transform femaleAnchor)
+        private IEnumerator AlignAndPauseParticipants(Transform maleAnchor, Transform femaleAnchor)
         {
-            if (maleParticipant == null || femaleParticipant == null) return false;
+            if (maleParticipant == null || femaleParticipant == null) yield break;
+
+            PauseNavigation(maleParticipant);
+            PauseNavigation(femaleParticipant);
 
             if (exactSettleBeforePlayback)
             {
-                SettleAtAnchor(maleParticipant, maleAnchor);
-                SettleAtAnchor(femaleParticipant, femaleAnchor);
+                maleParticipant.Driver.BeginAnchorAlignment(maleAnchor);
+                femaleParticipant.Driver.BeginAnchorAlignment(femaleAnchor);
+
+                while (maleParticipant.Driver.IsAnchorAlignmentActive
+                    || femaleParticipant.Driver.IsAnchorAlignmentActive)
+                {
+                    yield return null;
+                }
             }
             else
             {
                 maleParticipant.transform.rotation = maleAnchor.rotation;
                 femaleParticipant.transform.rotation = femaleAnchor.rotation;
             }
-
-            PauseNavigation(maleParticipant);
-            PauseNavigation(femaleParticipant);
-            return true;
-        }
-
-        private static void SettleAtAnchor(PairedAnimationParticipant participant, Transform anchor)
-        {
-            NavMeshAgent nav = participant.NavAgent;
-            if (nav != null && nav.enabled && nav.isOnNavMesh)
-            {
-                nav.Warp(anchor.position);
-                nav.nextPosition = anchor.position;
-            }
-            else
-            {
-                participant.transform.position = anchor.position;
-            }
-            participant.transform.rotation = anchor.rotation;
         }
 
         private static void PauseNavigation(PairedAnimationParticipant participant)

@@ -46,5 +46,13 @@ namespace MLA_SIM
                 actionId,
                 StringComparison.OrdinalIgnoreCase));
         }
+
+        public bool ContainsSequence(string sequenceId)
+        {
+            if (string.IsNullOrEmpty(sequenceId) || actions == null) return false;
+            return actions.Exists(a => a != null
+                && (string.Equals(a.maleSequenceId, sequenceId, StringComparison.OrdinalIgnoreCase)
+                    || string.Equals(a.femaleSequenceId, sequenceId, StringComparison.OrdinalIgnoreCase)));
+        }
     }
 }

@@ -83,6 +83,32 @@ namespace MLA_SIM
         public string actionInterruptParam = "ActionInterrupt";
         public string actionVariantParam = "ActionVariant";
 
+        [Header("Paired Interaction Clearance")]
+        [Tooltip("Temporarily reduce local collision clearance for registered paired animation sequences.")]
+        public bool usePairedInteractionClearance = true;
+        [Tooltip("Begin reducing clearance when this agent is within this horizontal distance of its paired pose.")]
+        [Min(0.1f)] public float pairedClearanceActivationDistance = 2f;
+        [Tooltip("Temporary NavMeshAgent radius used for the final paired-animation approach.")]
+        [Min(0.01f)] public float pairedNavMeshRadius = 0.1f;
+        [Tooltip("Disable NavMesh local avoidance during the close-range approach and paired animation.")]
+        public bool disablePairedObstacleAvoidance = true;
+        [Tooltip("Temporarily reduce the CharacterController radius together with the NavMeshAgent radius.")]
+        public bool reducePairedCharacterControllerRadius = true;
+
+        [Header("Anchor Alignment")]
+        [Tooltip("Interpolate the final short movement and rotation into an interaction anchor instead of snapping.")]
+        public bool smoothAnchorAlignment = true;
+        [Tooltip("Duration of the final anchor position and rotation interpolation.")]
+        [Min(0f)] public float anchorAlignmentDuration = 0.35f;
+        [Tooltip("Normalized easing used during the final anchor interpolation.")]
+        public AnimationCurve anchorAlignmentCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+        [Tooltip("Begin gradually facing the anchor when the remaining horizontal distance is below this value.")]
+        [Min(0.1f)] public float anchorFacingStartDistance = 0.5f;
+        [Tooltip("Maximum yaw speed used while progressively facing the anchor during approach.")]
+        [Min(1f)] public float anchorFacingDegreesPerSecond = 60f;
+        [Tooltip("Controls how strongly anchor facing increases as the agent approaches the anchor.")]
+        public AnimationCurve anchorFacingCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
         [Header("Movement Flags")]
         public float movingSpeedThreshold = 0.10f; // m/s to set IsMoving
 
@@ -108,6 +134,20 @@ namespace MLA_SIM
         private int _lastReportedControllerStateHash;
         private bool _controllerActionStateEntered;
 
+        private bool _pairedClearanceActive;
+        private float _pairedOriginalNavMeshRadius;
+        private ObstacleAvoidanceType _pairedOriginalAvoidanceType;
+        private float _pairedOriginalCharacterControllerRadius;
+        private bool _pairedNavMeshAdjusted;
+        private bool _pairedCharacterControllerAdjusted;
+        private Coroutine _anchorAlignmentRoutine;
+        private bool _anchorNavStateCaptured;
+        private bool _anchorOriginalUpdatePosition;
+        private bool _anchorOriginalUpdateRotation;
+        private bool _anchorApproachRotationActive;
+        private bool _anchorApproachOriginalUpdateRotation;
+        private Transform _anchorApproachTarget;
+
         // Agent variance re-roll tracking
         private HashSet<int> _agentVarianceStateHashes = new HashSet<int>();
         private float _lastVarianceNormalizedTime = 0f;
@@ -123,6 +163,235 @@ namespace MLA_SIM
             _lastPosition = transform.position;
             CacheAnimatorParams();
             SeedAgentVariance();
+        }
+
+        public bool IsPairedInteractionClearanceActive => _pairedClearanceActive;
+
+        public void UpdatePairedInteractionApproach(Vector3 targetPosition)
+        {
+            if (!usePairedInteractionClearance || _pairedClearanceActive) return;
+
+            Vector3 delta = targetPosition - transform.position;
+            delta.y = 0f;
+            float activationDistance = Mathf.Max(0.1f, pairedClearanceActivationDistance);
+            if (delta.sqrMagnitude <= activationDistance * activationDistance)
+            {
+                BeginPairedInteractionClearance();
+            }
+        }
+
+        public void BeginPairedInteractionClearance()
+        {
+            if (!usePairedInteractionClearance || _pairedClearanceActive) return;
+
+            _pairedClearanceActive = true;
+            if (_agent != null)
+            {
+                _pairedOriginalNavMeshRadius = _agent.radius;
+                _pairedOriginalAvoidanceType = _agent.obstacleAvoidanceType;
+                _pairedNavMeshAdjusted = true;
+                _agent.radius = Mathf.Max(0.01f, pairedNavMeshRadius);
+                if (disablePairedObstacleAvoidance)
+                {
+                    _agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+                }
+            }
+
+            if (_characterController != null && reducePairedCharacterControllerRadius)
+            {
+                _pairedOriginalCharacterControllerRadius = _characterController.radius;
+                _pairedCharacterControllerAdjusted = true;
+                _characterController.radius = Mathf.Min(
+                    Mathf.Max(0.01f, pairedNavMeshRadius),
+                    Mathf.Max(0.01f, _characterController.height * 0.5f));
+            }
+        }
+
+        public void EndPairedInteractionClearance()
+        {
+            if (!_pairedClearanceActive) return;
+
+            if (_agent != null && _pairedNavMeshAdjusted)
+            {
+                _agent.radius = _pairedOriginalNavMeshRadius;
+                _agent.obstacleAvoidanceType = _pairedOriginalAvoidanceType;
+            }
+
+            if (_characterController != null && _pairedCharacterControllerAdjusted)
+            {
+                _characterController.radius = _pairedOriginalCharacterControllerRadius;
+            }
+
+            _pairedNavMeshAdjusted = false;
+            _pairedCharacterControllerAdjusted = false;
+            _pairedClearanceActive = false;
+        }
+
+        public bool IsAnchorAlignmentActive => _anchorAlignmentRoutine != null;
+
+        public void UpdateAnchorApproach(Transform anchor)
+        {
+            if (anchor == null)
+            {
+                EndAnchorApproach();
+                return;
+            }
+
+            if (_anchorApproachTarget != null && _anchorApproachTarget != anchor)
+            {
+                EndAnchorApproach();
+            }
+
+            Vector3 toAnchor = anchor.position - transform.position;
+            toAnchor.y = 0f;
+            float startDistance = Mathf.Max(0.1f, anchorFacingStartDistance);
+            if (toAnchor.sqrMagnitude > startDistance * startDistance)
+            {
+                EndAnchorApproach();
+                return;
+            }
+
+            if (!_anchorApproachRotationActive)
+            {
+                _anchorApproachTarget = anchor;
+                _anchorApproachRotationActive = true;
+                if (_agent != null)
+                {
+                    _anchorApproachOriginalUpdateRotation = _agent.updateRotation;
+                    _agent.updateRotation = false;
+                }
+            }
+
+            Vector3 targetForward = anchor.forward;
+            targetForward.y = 0f;
+            if (targetForward.sqrMagnitude <= 0.0001f) return;
+
+            float proximity = 1f - Mathf.Clamp01(toAnchor.magnitude / startDistance);
+            float facingStrength = anchorFacingCurve != null
+                ? Mathf.Clamp01(anchorFacingCurve.Evaluate(proximity))
+                : Mathf.SmoothStep(0f, 1f, proximity);
+            float turnSpeed = Mathf.Max(1f, anchorFacingDegreesPerSecond)
+                * Mathf.Lerp(0.15f, 1f, facingStrength);
+            Quaternion targetRotation = Quaternion.LookRotation(targetForward.normalized, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                targetRotation,
+                turnSpeed * Time.deltaTime);
+        }
+
+        public void EndAnchorApproach()
+        {
+            if (!_anchorApproachRotationActive) return;
+
+            if (_agent != null && !_anchorNavStateCaptured)
+            {
+                _agent.updateRotation = _anchorApproachOriginalUpdateRotation;
+            }
+
+            _anchorApproachRotationActive = false;
+            _anchorApproachTarget = null;
+        }
+
+        public bool BeginAnchorAlignment(Transform anchor)
+        {
+            if (anchor == null) return false;
+
+            CancelAnchorAlignment();
+            Vector3 targetPosition = anchor.position;
+            Quaternion targetRotation = anchor.rotation;
+
+            PrepareNavigationForAnchorAlignment();
+            if (!smoothAnchorAlignment || anchorAlignmentDuration <= 0.001f)
+            {
+                ApplyAnchorPose(targetPosition, targetRotation);
+                RestoreNavigationAfterAnchorAlignment();
+                return true;
+            }
+
+            _anchorAlignmentRoutine = StartCoroutine(AlignToAnchorCo(targetPosition, targetRotation));
+            return true;
+        }
+
+        public void CancelAnchorAlignment()
+        {
+            if (_anchorAlignmentRoutine != null)
+            {
+                StopCoroutine(_anchorAlignmentRoutine);
+                _anchorAlignmentRoutine = null;
+            }
+
+            RestoreNavigationAfterAnchorAlignment();
+        }
+
+        private System.Collections.IEnumerator AlignToAnchorCo(Vector3 targetPosition, Quaternion targetRotation)
+        {
+            Vector3 startPosition = transform.position;
+            Quaternion startRotation = transform.rotation;
+            float duration = Mathf.Max(0.001f, anchorAlignmentDuration);
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                float normalizedTime = Mathf.Clamp01(elapsed / duration);
+                float blend = anchorAlignmentCurve != null
+                    ? anchorAlignmentCurve.Evaluate(normalizedTime)
+                    : Mathf.SmoothStep(0f, 1f, normalizedTime);
+
+                ApplyAnchorPose(
+                    Vector3.LerpUnclamped(startPosition, targetPosition, blend),
+                    Quaternion.SlerpUnclamped(startRotation, targetRotation, blend));
+
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            ApplyAnchorPose(targetPosition, targetRotation);
+            RestoreNavigationAfterAnchorAlignment();
+            _anchorAlignmentRoutine = null;
+        }
+
+        private void PrepareNavigationForAnchorAlignment()
+        {
+            if (_agent == null || !_agent.enabled || !_agent.isOnNavMesh) return;
+
+            _agent.ResetPath();
+            _agent.isStopped = true;
+            _anchorOriginalUpdatePosition = _agent.updatePosition;
+            _anchorOriginalUpdateRotation = _anchorApproachRotationActive
+                ? _anchorApproachOriginalUpdateRotation
+                : _agent.updateRotation;
+            _anchorApproachRotationActive = false;
+            _anchorApproachTarget = null;
+            _anchorNavStateCaptured = true;
+            _agent.updatePosition = false;
+            _agent.updateRotation = false;
+        }
+
+        private void ApplyAnchorPose(Vector3 position, Quaternion rotation)
+        {
+            transform.SetPositionAndRotation(position, rotation);
+            if (_agent != null && _agent.enabled && _agent.isOnNavMesh && _anchorNavStateCaptured)
+            {
+                _agent.nextPosition = position;
+            }
+        }
+
+        private void RestoreNavigationAfterAnchorAlignment()
+        {
+            if (!_anchorNavStateCaptured) return;
+
+            if (_agent != null)
+            {
+                if (_agent.enabled && _agent.isOnNavMesh)
+                {
+                    _agent.Warp(transform.position);
+                    _agent.nextPosition = transform.position;
+                }
+                _agent.updatePosition = _anchorOriginalUpdatePosition;
+                _agent.updateRotation = _anchorOriginalUpdateRotation;
+            }
+
+            _anchorNavStateCaptured = false;
         }
 
         private void SeedAgentVariance()
@@ -328,7 +597,9 @@ namespace MLA_SIM
             var controllerSequence = registry != null ? registry.FindSequence(stateName) : null;
             if (CanUseControllerAction(controllerSequence))
             {
-                return PlayControllerAction(controllerSequence, holdSeconds);
+                bool started = PlayControllerAction(controllerSequence, holdSeconds);
+                if (started) ApplyPairedClearanceForPlayback(stateName);
+                return started;
             }
 
             EnsureBaseLayerStateCache();
@@ -353,6 +624,7 @@ namespace MLA_SIM
             {
                 _holdRoutine = StartCoroutine(ReturnToLocomotionAfter(holdSeconds, fade));
             }
+            ApplyPairedClearanceForPlayback(stateName);
             return true;
         }
 
@@ -370,7 +642,9 @@ namespace MLA_SIM
 
             if (CanUseControllerAction(seq))
             {
-                return PlayControllerAction(seq, holdSeconds);
+                bool started = PlayControllerAction(seq, holdSeconds);
+                if (started) ApplyPairedClearanceForPlayback(sequenceId);
+                return started;
             }
 
             // A registered one-state action (for example Dying) must preserve the
@@ -379,23 +653,31 @@ namespace MLA_SIM
                 && string.IsNullOrEmpty(seq.loopState) && !seq.HasHoldSteps
                 && string.IsNullOrEmpty(seq.endState))
             {
-                return PlayActionState(seq.startState, seq.startCrossfade, holdSeconds);
+                bool started = PlayActionState(seq.startState, seq.startCrossfade, holdSeconds);
+                if (started) ApplyPairedClearanceForPlayback(sequenceId);
+                return started;
             }
 
             CancelActivePlaybackForReplacement();
             _holdRoutine = seq.useBlendTree
                 ? StartCoroutine(ExecuteBlendTreeCo(seq, holdSeconds))
                 : StartCoroutine(ExecuteSequenceCo(seq, holdSeconds));
+            ApplyPairedClearanceForPlayback(sequenceId);
             return true;
         }
 
         public void StopActionPlayback(bool returnToLocomotion = true)
         {
+            CancelAnchorAlignment();
+            EndAnchorApproach();
+
             if (_holdRoutine != null)
             {
                 StopCoroutine(_holdRoutine);
                 _holdRoutine = null;
             }
+
+            EndPairedInteractionClearance();
 
             if (_animator == null || !_animator.gameObject.activeInHierarchy) return;
 
@@ -503,7 +785,36 @@ namespace MLA_SIM
                 SetControllerActionActive(false);
             }
             UpdateControllerBlend(sequence, duration, duration);
+            EndPairedInteractionClearance();
             _holdRoutine = null;
+        }
+
+        private void ApplyPairedClearanceForPlayback(string playbackId)
+        {
+            if (IsPairedAnimationRequest(playbackId))
+            {
+                BeginPairedInteractionClearance();
+            }
+            else
+            {
+                EndPairedInteractionClearance();
+            }
+        }
+
+        private static bool IsPairedAnimationRequest(string playbackId)
+        {
+            if (string.IsNullOrEmpty(playbackId)) return false;
+
+            var pairedRegistry = PairedAnimationRegistry.Instance;
+            if (pairedRegistry == null) return false;
+            if (pairedRegistry.ContainsSequence(playbackId)) return true;
+
+            var sequenceRegistry = AnimationSequenceRegistry.Instance;
+            var containingSequence = sequenceRegistry != null
+                ? sequenceRegistry.FindSequenceContainingState(playbackId)
+                : null;
+            return containingSequence != null
+                && pairedRegistry.ContainsSequence(containingSequence.sequenceId);
         }
 
         private void UpdateControllerBlend(ActionAnimSequence sequence, float elapsed, float duration)
@@ -615,6 +926,7 @@ namespace MLA_SIM
 
             if (isLocomotion)
             {
+                EndPairedInteractionClearance();
                 ClearControllerActionTracking();
             }
         }
@@ -741,6 +1053,7 @@ namespace MLA_SIM
             else _animator.CrossFadeInFixedTime(locoHash, returnFade, 0, 0f);
 
             RaiseStateChanged(locomotionStateName);
+            EndPairedInteractionClearance();
             _holdRoutine = null;
         }
 
@@ -751,6 +1064,7 @@ namespace MLA_SIM
         {
             if (_animator == null || string.IsNullOrEmpty(seq.blendTreeState))
             {
+                EndPairedInteractionClearance();
                 _holdRoutine = null;
                 yield break;
             }
@@ -803,6 +1117,7 @@ namespace MLA_SIM
             if (returnFade <= 0.001f) _animator.Play(locoHash, 0, 0f);
             else _animator.CrossFadeInFixedTime(locoHash, returnFade, 0, 0f);
             RaiseStateChanged(locomotionStateName);
+            EndPairedInteractionClearance();
             _holdRoutine = null;
         }
 
@@ -962,20 +1277,36 @@ namespace MLA_SIM
         private System.Collections.IEnumerator ReturnToLocomotionAfter(float seconds, float fade)
         {
             yield return new WaitForSeconds(seconds);
-            if (_animator == null) yield break;
-            // Convention: the BlendTree locomotion state is named locomotionStateName.
-            // Use the (typically longer) return crossfade so the action eases back
-            // into locomotion instead of snapping.
-            int locoHash = Animator.StringToHash(locomotionStateName);
-            float returnFade = Mathf.Max(fade, actionReturnCrossfade);
-            if (returnFade <= 0.001f) _animator.Play(locoHash, 0, 0f);
-            else _animator.CrossFadeInFixedTime(locoHash, returnFade, 0, 0f);
+            if (_animator != null)
+            {
+                // Convention: the BlendTree locomotion state is named locomotionStateName.
+                // Use the (typically longer) return crossfade so the action eases back
+                // into locomotion instead of snapping.
+                int locoHash = Animator.StringToHash(locomotionStateName);
+                float returnFade = Mathf.Max(fade, actionReturnCrossfade);
+                if (returnFade <= 0.001f) _animator.Play(locoHash, 0, 0f);
+                else _animator.CrossFadeInFixedTime(locoHash, returnFade, 0, 0f);
+            }
+            EndPairedInteractionClearance();
             _holdRoutine = null;
+        }
+
+        private void OnDisable()
+        {
+            CancelAnchorAlignment();
+            EndAnchorApproach();
+            EndPairedInteractionClearance();
         }
 
 #if UNITY_EDITOR
         private void OnValidate()
         {
+            pairedClearanceActivationDistance = Mathf.Max(0.1f, pairedClearanceActivationDistance);
+            pairedNavMeshRadius = Mathf.Max(0.01f, pairedNavMeshRadius);
+            anchorAlignmentDuration = Mathf.Max(0f, anchorAlignmentDuration);
+            anchorFacingStartDistance = Mathf.Max(0.1f, anchorFacingStartDistance);
+            anchorFacingDegreesPerSecond = Mathf.Max(1f, anchorFacingDegreesPerSecond);
+
             if (!Application.isPlaying)
             {
                 // keep caches in sync in Editor when parameter names change
