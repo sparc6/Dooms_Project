@@ -2657,6 +2657,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &47811048
 CharacterController:
@@ -5531,6 +5588,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &113369872
 CharacterController:
@@ -8932,6 +9046,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &213921162
 CharacterController:
@@ -10793,6 +10964,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &263223058
 CharacterController:
@@ -12929,6 +13157,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &307584759
 CharacterController:
@@ -14720,6 +15005,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &338463754
 CharacterController:
@@ -15325,6 +15667,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &352316613
 CharacterController:
@@ -17235,6 +17634,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &384041899
 CharacterController:
@@ -21117,6 +21573,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &471039917
 CharacterController:
@@ -22617,6 +23130,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &514795126
 CharacterController:
@@ -25545,6 +26115,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &560591530
 CharacterController:
@@ -26193,6 +26820,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &573967341
 CharacterController:
@@ -27012,6 +27696,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &578150965
 CharacterController:
@@ -29033,6 +29774,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &615428545
 CharacterController:
@@ -29876,6 +30674,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &628041447
 CharacterController:
@@ -32902,6 +33757,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &719464778
 CharacterController:
@@ -33917,6 +34829,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &729755037
 CharacterController:
@@ -36714,6 +37683,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &771204956
 CharacterController:
@@ -37211,6 +38237,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &779280129
 CharacterController:
@@ -42794,6 +43877,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &947407160
 CharacterController:
@@ -47206,6 +48346,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1037178944
 CharacterController:
@@ -49126,6 +50323,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1103036015
 CharacterController:
@@ -49728,6 +50982,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1113384304
 CharacterController:
@@ -52777,6 +54088,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1169938100
 CharacterController:
@@ -53962,6 +55330,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1181930736
 CharacterController:
@@ -54914,6 +56339,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1214530442
 CharacterController:
@@ -59643,6 +61125,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1354652991
 CharacterController:
@@ -60975,6 +62514,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1379490497
 CharacterController:
@@ -63730,6 +65326,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1437275774
 CharacterController:
@@ -65817,6 +67470,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1501378762
 CharacterController:
@@ -67089,6 +68799,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1525685326
 CharacterController:
@@ -70957,6 +72724,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1596364148
 CharacterController:
@@ -74354,6 +76178,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1683365495
 CharacterController:
@@ -82254,6 +84135,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1903415229
 CharacterController:
@@ -84664,6 +86602,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1927636764
 CharacterController:
@@ -85547,6 +87542,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1936853007
 CharacterController:
@@ -86417,6 +88469,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1938428161
 CharacterController:
@@ -87505,6 +89614,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &1953104967
 CharacterController:
@@ -90375,6 +92541,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &2023995936
 CharacterController:
@@ -95183,6 +97406,63 @@ MonoBehaviour:
   actionActiveParam: ActionActive
   actionInterruptParam: ActionInterrupt
   actionVariantParam: ActionVariant
+  usePairedInteractionClearance: 1
+  pairedClearanceActivationDistance: 2
+  pairedNavMeshRadius: 0.1
+  disablePairedObstacleAvoidance: 1
+  reducePairedCharacterControllerRadius: 1
+  smoothAnchorAlignment: 1
+  anchorAlignmentDuration: 0.35
+  anchorAlignmentCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  anchorFacingStartDistance: 0.5
+  anchorFacingDegreesPerSecond: 60
+  anchorFacingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   movingSpeedThreshold: 0.1
 --- !u!143 &2131628439
 CharacterController:
