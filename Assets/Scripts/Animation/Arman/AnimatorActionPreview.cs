@@ -26,6 +26,11 @@ namespace MLA_SIM
         [Min(0f)] public float startDelay = 1f;
         [Min(0f)] public float transitionPause = 1f;
 
+        [Header("Optional Action Anchor")]
+        [Tooltip("When assigned, the preview aligns the character to this transform before each action begins.")]
+        public Transform actionAnchor;
+        public bool alignToAnchorBeforePlayback = false;
+
         public List<PreviewStep> playlist = new List<PreviewStep>
         {
             new PreviewStep { sequenceId = "DoomScroll", holdSeconds = 6f },
@@ -125,6 +130,7 @@ namespace MLA_SIM
                     }
 
                     float duration = Mathf.Max(0.1f, step.holdSeconds);
+                    AlignToActionAnchor();
                     if (_driver.PlayActionSequence(step.sequenceId, duration))
                     {
                         yield return new WaitForSeconds(duration);
@@ -148,6 +154,16 @@ namespace MLA_SIM
                 _brainWasEnabled = false;
                 _brainPausedByPreview = false;
             }
+        }
+
+        private void AlignToActionAnchor()
+        {
+            if (!alignToAnchorBeforePlayback || actionAnchor == null)
+            {
+                return;
+            }
+
+            transform.SetPositionAndRotation(actionAnchor.position, actionAnchor.rotation);
         }
 
         private void OnDisable()

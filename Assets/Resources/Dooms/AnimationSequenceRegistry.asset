@@ -150,7 +150,7 @@ MonoBehaviour:
     startState: Eating_Start
     startPropId: 
     loopState: Eating_Loop
-    loopPropId: 
+    loopPropId: Hamburger
     endState: Eating_End
     endPropId: 
     holdSteps: []
@@ -260,12 +260,12 @@ MonoBehaviour:
   - sequenceId: Catatonic
     controllerActionId: 4
     controllerActionVariant: 0
-    controllerEndLeadSeconds: 0.75
-    startState: Catatonic_Start
+    controllerEndLeadSeconds: 0
+    startState: Catatonic_Loop
     startPropId: 
-    loopState: Catatonic_Loop
+    loopState: 
     loopPropId: 
-    endState: Catatonic_End
+    endState: 
     endPropId: 
     holdSteps: []
     startCrossfade: 0.15
@@ -412,6 +412,132 @@ MonoBehaviour:
     controllerActionVariant: 0
     controllerEndLeadSeconds: 0
     startState: farewell-kiss-f
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: DoomScroll_2
+    controllerActionId: 1
+    controllerActionVariant: 1
+    controllerEndLeadSeconds: 0
+    startState: DoomScroll
+    startPropId: Phone
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Holding_Comfort_Object
+    controllerActionId: 18
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: Holding_Comfort_Object
+    startPropId: TeddyBear
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Looking_Away
+    controllerActionId: 19
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: Looking_Away
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: NO_NO_NO
+    controllerActionId: 20
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: NO_NO_NO
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Smashing_Object
+    controllerActionId: 21
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: Smashing_Object
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Throwing_Molotov
+    controllerActionId: 22
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: Throwing_Molotov
+    startPropId: 
+    loopState: 
+    loopPropId: 
+    endState: 
+    endPropId: 
+    holdSteps: []
+    startCrossfade: 0.25
+    endCrossfade: 0.35
+    useBlendTree: 0
+    blendTreeState: 
+    blendParam: 
+    blendPropId: 
+    blendKeys: []
+  - sequenceId: Self_Immolation
+    controllerActionId: 23
+    controllerActionVariant: 0
+    controllerEndLeadSeconds: 0
+    startState: Self_Immolation
     startPropId: 
     loopState: 
     loopPropId: 

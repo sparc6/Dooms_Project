@@ -85,6 +85,21 @@ namespace MLA_SIM
             ClearAllProps();
         }
 
+        public bool TryGetActiveStateProp(string stateName, out GameObject propInstance)
+        {
+            propInstance = null;
+            return !string.IsNullOrEmpty(stateName)
+                && _activeProps.TryGetValue(stateName, out propInstance)
+                && propInstance != null;
+        }
+
+        public bool SetActiveStatePropVisible(string stateName, bool visible)
+        {
+            if (!TryGetActiveStateProp(stateName, out GameObject propInstance)) return false;
+            propInstance.SetActive(visible);
+            return true;
+        }
+
         private class ResolvedProp
         {
             public GameObject prefab;

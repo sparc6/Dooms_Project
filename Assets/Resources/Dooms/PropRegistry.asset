@@ -41,3 +41,24 @@ MonoBehaviour:
     localOffset: {x: 0, y: 0, z: 0}
     localRotationEuler: {x: 0, y: 0, z: 0}
     description: Drink some water please.
+  - propId: Phone
+    itemId: 
+    prefab: {fileID: 919132149155446097, guid: 285f280224d47c44dbb9db8642c43b54, type: 3}
+    defaultBone: CC_Base_R_Hand
+    localOffset: {x: 0.02398326, y: 0.1082376, z: 0.03477643}
+    localRotationEuler: {x: -196.4, y: -21.28, z: -89.33499}
+    description: Phone used by DoomScroll_2 and other handheld phone actions.
+  - propId: TeddyBear
+    itemId: 
+    prefab: {fileID: 919132149155446097, guid: eeb786410c1119b4889e1fb60fd975c2, type: 3}
+    defaultBone: CC_Base_R_Hand
+    localOffset: {x: 0.1285, y: 0.0043, z: -0.0455}
+    localRotationEuler: {x: 174.862, y: 85.46, z: 75.325}
+    description: Comfort object used by Holding_Comfort_Object.
+  - propId: Hamburger
+    itemId: 
+    prefab: {fileID: 919132149155446097, guid: 9e63216d2d9c87a43bd8f220e0e2dfeb, type: 3}
+    defaultBone: CC_Base_R_Hand
+    localOffset: {x: 0.0631, y: 0.0994, z: 0.0294}
+    localRotationEuler: {x: -60.807, y: -65.492, z: 62.425}
+    description: Food prop used by the Eating sequence.
