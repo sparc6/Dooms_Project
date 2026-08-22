@@ -1,0 +1,270 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc1fe797a13e954e8c0001dbcc1dc99, type: 3}
+  m_Name: CellTowerConfig
+  m_EditorClassIdentifier: Assembly-CSharp::CellTowerConfig
+  generatedLayer: 6
+  centralPole:
+    prefab: {fileID: 919132149155446097, guid: d531569706dad904a8f6d1af91609c7e, type: 3}
+    lengthAxis: 2
+    referenceLength: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleMultiplier: {x: 1, y: 1, z: 1}
+    centerOnPlacement: 1
+  radialSupport:
+    prefab: {fileID: 919132149155446097, guid: c7290286ba941a04e93f3f17b86389ff, type: 3}
+    lengthAxis: 0
+    referenceLength: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleMultiplier: {x: 1, y: 1, z: 1}
+    centerOnPlacement: 1
+  verticalHorizontalSupport:
+    prefab: {fileID: 919132149155446097, guid: 0c8480af78aae964e8a75ed094b04ef9, type: 3}
+    lengthAxis: 0
+    referenceLength: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleMultiplier: {x: 1, y: 1, z: 1}
+    centerOnPlacement: 1
+  diagonalSupport:
+    prefab: {fileID: 919132149155446097, guid: 238a87fe1f6dc1e40a5b1cefacd7f37a, type: 3}
+    lengthAxis: 0
+    referenceLength: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleMultiplier: {x: 1, y: 1, z: 1}
+    centerOnPlacement: 1
+  ladder:
+    prefab: {fileID: 919132149155446097, guid: 448e1110f3766584abf8651c9b747649, type: 3}
+    lengthAxis: 2
+    referenceLength: 0
+    positionOffset: {x: -0.07, y: 0, z: -1.57}
+    rotationOffset: {x: 0, y: 60, z: 0}
+    scaleMultiplier: {x: 1, y: 1, z: 1}
+    centerOnPlacement: 0
+  threeSidedPlatforms:
+  - module:
+      prefab: {fileID: 919132149155446097, guid: 554b158ee5747ec4383f671018aff26c, type: 3}
+      lengthAxis: 0
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: -90, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 2
+  - module:
+      prefab: {fileID: 919132149155446097, guid: 43ce22a0dcdeda041b2923696aef9961, type: 3}
+      lengthAxis: 0
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: -90, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - module:
+      prefab: {fileID: 919132149155446097, guid: 79db2623064bc8e43916cee4d7ba2f39, type: 3}
+      lengthAxis: 0
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: -90, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  fourSidedPlatforms:
+  - module:
+      prefab: {fileID: 919132149155446097, guid: 5b67f31b54aceb54c97ab83f5917c9a8, type: 3}
+      lengthAxis: 0
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: -90, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - module:
+      prefab: {fileID: 919132149155446097, guid: 23ba591698b6c5342803a80a988d24a0, type: 3}
+      lengthAxis: 0
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: -90, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  fiveSidedPlatforms:
+  - module:
+      prefab: {fileID: 919132149155446097, guid: 6931a10a051a3ae4ebec1a58b48ec17f, type: 3}
+      lengthAxis: 0
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: -90, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - module:
+      prefab: {fileID: 919132149155446097, guid: 7daf012db0411d84ebe1aa96833a7d68, type: 3}
+      lengthAxis: 0
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: -90, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  antennaPairs:
+  - id: 01
+    antenna:
+      prefab: {fileID: 919132149155446097, guid: 583a31c706d364a488c523c4f3672355, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    frame:
+      prefab: {fileID: 919132149155446097, guid: 0c008f7daadff3346a42955e43dfd5b2, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - id: 03
+    antenna:
+      prefab: {fileID: 919132149155446097, guid: 3cdf42b2f7d89e942b2d30e7c1aaa5b4, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    frame:
+      prefab: {fileID: 919132149155446097, guid: 03f25d48fe5d5784f99cf93bbf99681a, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - id: 04
+    antenna:
+      prefab: {fileID: 919132149155446097, guid: 7af20eb71c8f2bc4591e849efdf69688, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    frame:
+      prefab: {fileID: 919132149155446097, guid: 5ac37f375ab85154e94ea79bf4d93b3c, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - id: 06
+    antenna:
+      prefab: {fileID: 919132149155446097, guid: f3733e342b30a8e43bf0fdd400045394, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    frame:
+      prefab: {fileID: 919132149155446097, guid: f3ae6e6e079b6ff49b4f6fdbe4fe878d, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - id: 10
+    antenna:
+      prefab: {fileID: 919132149155446097, guid: 7ca848151327dfe42af161e528465a31, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    frame:
+      prefab: {fileID: 919132149155446097, guid: ada4aa2d9155661489d13c5c8dc0264d, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - id: 11
+    antenna:
+      prefab: {fileID: 919132149155446097, guid: 1eb2f09593ddd2b4196656c0e4fb0707, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    frame:
+      prefab: {fileID: 919132149155446097, guid: 3893f7e3c788c7649829294d9d26d19f, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - id: 13
+    antenna:
+      prefab: {fileID: 919132149155446097, guid: 1deba34a52f11f742bd59943d03f2772, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    frame:
+      prefab: {fileID: 919132149155446097, guid: 5fc169b3df1a28f4e8de160786919468, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  - id: 15
+    antenna:
+      prefab: {fileID: 919132149155446097, guid: 5bbfce4cae0997c4ea15de1e1af45db7, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    frame:
+      prefab: {fileID: 919132149155446097, guid: 64ef07196dec4034daaa351c362e1b09, type: 3}
+      lengthAxis: 2
+      referenceLength: 0
+      positionOffset: {x: 0, y: 0, z: 0}
+      rotationOffset: {x: 0, y: 0, z: 0}
+      scaleMultiplier: {x: 1, y: 1, z: 1}
+      centerOnPlacement: 0
+    weight: 1
+  minimumLevels: 15
+  maximumLevels: 20
+  startingLevelMinimumOffset: 10
+  startingLevelMaximumOffset: 5
