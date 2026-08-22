@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c542ec424fec14093b5992201c2d51, type: 3}
+  m_Name: FenceSplineGeneratorConfig
+  m_EditorClassIdentifier: Assembly-CSharp::FenceSplineGeneratorConfig
+  _enabled: 1
+  _tiles:
+  - {fileID: 7220840625639311326, guid: 5e3584d016f736143a8c366961b0f9a0, type: 3}
+  _tileLengthAxis: 0
+  _tileOrientationAxis: 0
+  _trimStartPercent: 0
+  _trimEndPercent: 100
+  _curvatureProbeStep: 1
+  _lowCurvatureDegPerMeter: 1
+  _highCurvatureDegPerMeter: 12
+  _verticalOffset: 0
+  _perpendicularOffset: 0
+  _tileGap: -0.05
+  _tailSkipLength: 0.15
+  _spawnPostsAtLinearPoints: 0
+  _linearTileOverlap: 0.02
+  _spawnFinalPost: 1
+  _finalPostPrefab: {fileID: 4541664161443355000, guid: 221aac48342e84949a84afe8d3bdb8da, type: 3}
+  _alignFinalPostToSpline: 1

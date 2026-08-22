@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 779378651dab4fc59563a6ce265ad68f, type: 3}
+  m_Name: ScaffoldingConfig
+  m_EditorClassIdentifier: Assembly-CSharp::ScaffoldingConfig
+  sectionPrefab: {fileID: 6148635873370939299, guid: d8c632d6a8e745447984910355a07d9f, type: 3}
+  sectionLength: 2.5
+  floorHeight: 2
+  sectionForwardAxis: 0
